@@ -16,12 +16,14 @@ h2 {
   font-size: 96px;
 }
 
+p {
+  color: var(--txt-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px; /* Müssen wir mal gucken */
+}
+
 
 /* Themes */
-:root {
-  --bg-color: #F3F3F3;
-  --txt-color: #202020;
-}
 
 [data-theme="dark"] {
   --bg-color: #202020;
