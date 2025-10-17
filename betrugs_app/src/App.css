@@ -1,0 +1,7 @@
+.app-shell {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}

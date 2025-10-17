@@ -1,7 +1,7 @@
 /* Global CSS Settings */
 body {
-  margin: 5%;
   background-color: var(--bg-color);
+  margin: 0;
 }
 
 h1 {
