@@ -1,13 +1,36 @@
+/* Global CSS Settings */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 5%;
+  background-color: var(--bg-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  color: var(--txt-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 128px;
+}
+
+h2 {
+  color: var(--txt-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 96px;
+}
+
+p {
+  color: var(--txt-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px; /* Müssen wir mal gucken */
+}
+
+
+/* Themes */
+
+[data-theme="dark"] {
+  --bg-color: #202020;
+  --txt-color: #F3F3F3;
+}
+
+[data-theme="light"] {
+  --bg-color: #F3F3F3;
+  --txt-color: #202020;
 }
