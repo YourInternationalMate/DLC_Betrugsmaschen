@@ -1,7 +1,11 @@
 .app-shell {
-  margin: 5%;
+  margin: 0 5% 5% 5% ;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 0.5rem;
+}
+
+main h1 {
+    margin: 0;
 }

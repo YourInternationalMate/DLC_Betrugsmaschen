@@ -19,7 +19,7 @@ function Navigation() {
   };
 
   return (
-    <>
+    <div className="container">
       <IconButton edge="start" onClick={() => setOpen(true)} aria-label="Menu" >
         <MenuIcon />
       </IconButton>
@@ -32,7 +32,7 @@ function Navigation() {
           <ListItemButton onClick={toggleTheme}><ListItemText primary="Theme" /></ListItemButton>
         </List>
       </Drawer>
-    </>
+    </div>
   );
 }
 
