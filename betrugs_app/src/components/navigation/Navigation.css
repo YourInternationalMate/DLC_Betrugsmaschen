@@ -14,3 +14,15 @@
 .container {
     margin: 2.5%;
 }
+
+.menuicon {
+  color: var(--txt-color);
+}
+
+.themeicon {
+  color: var(--bg-color);
+}
+
+.togglebutton.MuiButton-contained	{
+  background-color: var(--txt-color);
+}
