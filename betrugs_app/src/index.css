@@ -22,6 +22,13 @@ p {
   font-size: 20px; /* Müssen wir mal gucken */
 }
 
+a {
+  color: var(--txt-color);
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
+
 
 /* Themes */
 
