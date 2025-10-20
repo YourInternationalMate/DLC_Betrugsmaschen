@@ -12,7 +12,7 @@ import NavigationElement from "../navigation-element/NavigationElement";
 function Navigation() {
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
-  const items = [{ href: "#intro", label: "Einführung", checked: true }, { href: "#intro", label: "Einführung", checked: false }];
+  const items = [{ to: "#einfuehrung", label: "Einführung", checked: true }, { to: "#test", label: "Test", checked: false }];
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

@@ -1,7 +1,8 @@
 /* Global CSS Settings */
-body {
+body, html {
   background-color: var(--bg-color);
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
