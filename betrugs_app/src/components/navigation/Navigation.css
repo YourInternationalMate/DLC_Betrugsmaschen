@@ -1,0 +1,28 @@
+.drawerPaper.MuiDrawer-paper {
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+}
+
+.drawerPaper .MuiListItemText-primary,
+.drawerPaper .MuiListItemButton-root {
+  color: inherit;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+}
+
+.container {
+    margin: 2.5%;
+}
+
+.menuicon {
+  color: var(--txt-color);
+}
+
+.themeicon {
+  color: var(--bg-color);
+}
+
+.togglebutton.MuiButton-contained	{
+  background-color: var(--txt-color);
+}

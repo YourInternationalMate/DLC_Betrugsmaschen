@@ -2,8 +2,10 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
-      <h1>BETRUGSMASCHEN<br />IM INTERNET.</h1>
+    <div className="app-shell">
+      <main>
+        <h1>BETRUGSMASCHEN<br />IM INTERNET.</h1>
+      </main>
     </div>
   );
 }
