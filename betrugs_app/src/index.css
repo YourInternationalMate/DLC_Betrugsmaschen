@@ -50,9 +50,15 @@ a {
 [data-theme="dark"] {
   --bg-color: #202020;
   --txt-color: #F3F3F3;
+  --correct: #2e9f35;
+  --incorrect: #c54b4b;
+  --warning: #d39a45;
 }
 
 [data-theme="light"] {
   --bg-color: #F3F3F3;
   --txt-color: #202020;
+  --correct: #1b5e20;
+  --incorrect: #b71c1c;
+  --warning: #c77800;
 }

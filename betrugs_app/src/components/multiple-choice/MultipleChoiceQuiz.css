@@ -1,0 +1,11 @@
+.quiz-feedback.correct {
+  color: var(--correct);
+}
+
+.quiz-feedback.incorrect {
+  color: var(--incorrect);
+}
+
+.quiz-feedback.warning {
+  color: var(--warning);
+}
