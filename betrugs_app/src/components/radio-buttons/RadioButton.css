@@ -1,0 +1,23 @@
+.MuiFormControlLabel-label {
+    color: var(--txt-color);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+.MuiRadio-root .MuiSvgIcon-root { 
+    color: var(--txt-color); 
+}
+
+.MuiRadio-root.Mui-checked .MuiSvgIcon-root { 
+    color: var(--txt-color); 
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.radio-btn {
+    margin-left: 15px;
+}
