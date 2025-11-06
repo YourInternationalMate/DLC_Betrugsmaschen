@@ -30,15 +30,35 @@ a {
   text-align: center;
 }
 
+.quiz-container {
+  height: 600px;
+}
+
+.submit-btn {
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+    width: 100px;
+    height: 41px;
+    border-radius: 20.5px;
+    border: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
 
 /* Themes */
 
 [data-theme="dark"] {
   --bg-color: #202020;
   --txt-color: #F3F3F3;
+  --correct: #2e9f35;
+  --incorrect: #c54b4b;
+  --warning: #d39a45;
 }
 
 [data-theme="light"] {
   --bg-color: #F3F3F3;
   --txt-color: #202020;
+  --correct: #1b5e20;
+  --incorrect: #b71c1c;
+  --warning: #c77800;
 }
