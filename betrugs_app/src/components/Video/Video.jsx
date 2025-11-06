@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { FaPlay, FaPause, FaRedo, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Video.scss";
 
-const VideoPlayer = ({ widthClass = "w-large" }) => {
+const VideoPlayer = ({ widthClass = "w-large", path }) => {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -48,7 +48,7 @@ const VideoPlayer = ({ widthClass = "w-large" }) => {
             <video
                 ref={videoRef}
                 className="video-element"
-                src="/videos/test_Video.mp4"
+                src={`/videos/${path}`}
                 preload="metadata"
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}

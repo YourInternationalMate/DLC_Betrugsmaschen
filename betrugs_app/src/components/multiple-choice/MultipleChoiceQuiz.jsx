@@ -3,7 +3,12 @@ import "./MultipleChoiceQuiz.css";
 import RadioButton2 from "../radio-buttons/RadioButton-2";
 import RadioButton3 from "../radio-buttons/RadioButton-3";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
+import Video from "../Video/Video";
 
+// variant={Zahl, wieviele Möglichkeiten 2-4} 
+// value1={""}-value4 
+// explanations={["Test1 ist falsch", ..4]} 
+// correctValue={""}-Wert der auch in Value eingetragen wird
 function MultipleChoiceQuiz({
   variant,
   value1,
@@ -16,7 +21,8 @@ function MultipleChoiceQuiz({
   const [selectedValue, setSelectedValue] = useState("");
   const [feedback, setFeedback] = useState(null);
   const answerOptions = useMemo(
-    () => [value1, value2, value3, value4].filter((option) => option !== undefined),
+    () =>
+      [value1, value2, value3, value4].filter((option) => option !== undefined),
     [value1, value2, value3, value4]
   );
 
@@ -62,7 +68,9 @@ function MultipleChoiceQuiz({
       status: isCorrect ? "correct" : "incorrect",
       message:
         explanationText ??
-        (isCorrect ? "Richtige Antwort!" : "Leider falsch. Schau dir die Hinweise an."),
+        (isCorrect
+          ? "Richtige Antwort!"
+          : "Leider falsch. Schau dir die Hinweise an."),
     });
   };
 
@@ -77,7 +85,9 @@ function MultipleChoiceQuiz({
 
   switch (variant) {
     case 2:
-      content = <RadioButton2 value1={value1} value2={value2} {...sharedProps} />;
+      content = (
+        <RadioButton2 value1={value1} value2={value2} {...sharedProps} />
+      );
       break;
     case 3:
       content = (
@@ -106,13 +116,13 @@ function MultipleChoiceQuiz({
 
   return (
     <div className="quiz-container">
-      <div className="video-conatiner">
-        {/* TODO: Video Component einfügen */}
-      </div>
+      <Video widthClass="w-80" path={"test_Video.mp4"} />
       <div className="radio-btn-container">
         {content}
         {feedback && feedback.status !== "warning" && (
-          <p className={`quiz-feedback ${feedback.status}`}>{feedback.message}</p>
+          <p className={`quiz-feedback ${feedback.status}`}>
+            {feedback.message}
+          </p>
         )}
         {feedback?.status === "warning" && (
           <p className="quiz-feedback warning">{feedback.message}</p>
