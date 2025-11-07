@@ -116,7 +116,7 @@ function MultipleChoiceQuiz({
 
   return (
     <div className="quiz-container">
-      <Video widthClass="w-80" path={"test_Video.mp4"} />
+      <Video widthClass="w-60" path={"test_Video.mp4"} />
       <div className="radio-btn-container">
         {content}
         {feedback && feedback.status !== "warning" && (
