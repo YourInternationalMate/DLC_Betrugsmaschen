@@ -18,9 +18,11 @@ h2 {
 }
 
 p {
-  color: var(--txt-color);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 20px; /* Müssen wir mal gucken */
+    color: var(--txt-color);
+    font-family: 'Tahoma', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.6;
 }
 
 a {

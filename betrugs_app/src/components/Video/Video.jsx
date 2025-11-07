@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaPlay, FaPause, FaRedo, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Video.scss";
+import subtitleObj from '../../data/subtitles/VideoSubtitles.json';
 
-const VideoPlayer = ({ widthClass = "w-large", path }) => {
+const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name }) => {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -10,7 +11,7 @@ const VideoPlayer = ({ widthClass = "w-large", path }) => {
     const [isDragging, setIsDragging] = useState(false);
     const [isSubtitleOpen, setIsSubtitleOpen] = useState(false);
 
-    const subtitleText = "Hier könnte dein Untertitel stehen";
+    const subtext = subtitleObj[subtitle_name];
 
     const handlePlayPause = () => {
         if (!videoRef.current) return;
@@ -48,7 +49,7 @@ const VideoPlayer = ({ widthClass = "w-large", path }) => {
             <video
                 ref={videoRef}
                 className="video-element"
-                src={`/videos/${path}`}
+                src={`/videos/${video_name}`}
                 preload="metadata"
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
@@ -82,17 +83,22 @@ const VideoPlayer = ({ widthClass = "w-large", path }) => {
                         }
                     }}
                 />
+                <div className="tooltip_containe">
+
                 <button
                     className="btn-toggle-subtitle"
+                    title="Untertitel ein-/ausblenden"
                     onClick={() => setIsSubtitleOpen(!isSubtitleOpen)}
                 >
                     {isSubtitleOpen ? <FaChevronUp /> : <FaChevronDown />}
                 </button>
+                </div>
+
             </div>
 
             {isSubtitleOpen && (
                 <p className="subtitle-container">
-                    {subtitleText}
+                    {subtext}
                 </p>
             )}
         </div>
