@@ -1,0 +1,10 @@
+{
+  "videoQuiz": {
+    "title": "Video Quiz Anleitung",
+    "text": "Du siehst nun ein Video zum Thema xy, das in mehrere Segmente aufgeteilt ist. Am Ende jedes Segments erhältst du eine Multiple-Choice-Frage. Wähle die richtige Antwort aus, um den weiteren Verlauf zu steuern. Viel Erfolg!"
+  },
+  "textQuiz": {
+    "title": "Text Quiz Anleitung",
+    "text": "Beantworte die folgenden Fragen auf Basis des bereitgestellten Textmaterials. Jede richtige Antwort bringt dich zum nächsten Abschnitt. Viel Erfolg!"
+  }
+}

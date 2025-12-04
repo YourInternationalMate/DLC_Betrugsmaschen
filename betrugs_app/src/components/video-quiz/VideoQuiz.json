@@ -1,4 +1,5 @@
 {
+  "instructions": "Du siehst nun ein Video zum Thema xy, welches in mehrere Segmente aufgeteilt ist. Am Ende eines jeden Segments erhältst du eine Multiple-Choice-Frage (Mehrfachauswahl möglich), wessen Richtigkeit über den weiteren Verlauf des Videos entscheidet. Viel Erfolg!",
   "intro": {
     "video": "videoQuizTest1.mp4",
     "subtitles": "subtitle_Video1",
@@ -26,8 +27,8 @@
       "values": ["Option 1", "Option 2", "Option 3", "Segment2"],
       "correctValue": "Option 2",
       "explanations": [
-        "Richtig! Option 2 ist korrekt.",
         "Falsch! Option 1 passt nicht.",
+        "Richtig! Option 2 ist korrekt.",
         "Falsch! Option 3 passt nicht.",
         "Falsch! Segment2 passt nicht."
       ],
@@ -45,8 +46,8 @@
       "values": ["Option A", "Option B", "Option C", "Segment3"],
       "correctValue": "Option B",
       "explanations": [
-        "Richtig! Option B ist korrekt.",
         "Falsch! Option A passt nicht.",
+        "Richtig! Option B ist korrekt.",
         "Falsch! Option C passt nicht.",
         "Falsch! Segment3 passt nicht."
       ],
@@ -83,8 +84,8 @@
       "values": ["Antwort A", "Antwort B", "Antwort C", "Segment5"],
       "correctValue": "Antwort B",
       "explanations": [
-        "Richtig! Antwort B ist korrekt.",
         "Falsch! Antwort A passt nicht.",
+        "Richtig! Antwort B ist korrekt.",
         "Falsch! Antwort C passt nicht.",
         "Falsch! Segment5 passt nicht."
       ],
@@ -102,9 +103,9 @@
       "values": ["Option 1", "Option 2", "Option 3", "Segment6"],
       "correctValue": "Option 3",
       "explanations": [
-        "Richtig! Option 3 ist korrekt.",
         "Falsch! Option 1 passt nicht.",
         "Falsch! Option 2 passt nicht.",
+        "Richtig! Option 3 ist korrekt.",
         "Falsch! Segment6 passt nicht."
       ],
       "next": {
@@ -121,9 +122,9 @@
       "values": ["Antwort A", "Antwort B", "Antwort C", "Segment7"],
       "correctValue": "Antwort C",
       "explanations": [
-        "Richtig! Antwort C ist korrekt.",
         "Falsch! Antwort A passt nicht.",
         "Falsch! Antwort B passt nicht.",
+        "Richtig! Antwort C ist korrekt.",
         "Falsch! Segment7 passt nicht."
       ],
       "next": {

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaPlay, FaPause, FaRedo, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Video.scss";
-import subtitleObj from '../../data/subtitles/VideoSubtitles.json';
+import subtitleObj from '../../data/VideoSubtitles.json';
 
 const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnded }) => {
     const videoRef = useRef(null);

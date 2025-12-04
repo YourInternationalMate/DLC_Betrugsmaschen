@@ -2,14 +2,13 @@ import { useState } from "react";
 import quizFlow from "./VideoQuiz.json";
 import VideoPlayer from "../Video/Video.jsx";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
+import Instruction from "../quiz-instruction/Instruction.jsx";
 import "./VideoQuiz.scss";
 
 export default function VideoQuiz() {
     const [currentSegment, setCurrentSegment] = useState("intro");
     const [selectedValue, setSelectedValue] = useState("");
     const [showExplanation, setShowExplanation] = useState(false);
-
-    // Feedback pro Segment speichern
     const [segmentFeedback, setSegmentFeedback] = useState({});
 
     const segment = quizFlow[currentSegment];
@@ -41,16 +40,13 @@ export default function VideoQuiz() {
             ? segment.question.next.correct
             : segment.question.next.incorrect;
 
-        // Prüfen, ob das nächste Segment das Quiz beenden soll
         if (nextSegment === "quiz_done") {
             setCurrentSegment("intro");
-            setSelectedValue("");
-            setShowExplanation(false);
         } else {
             setCurrentSegment(nextSegment);
-            setSelectedValue("");
-            setShowExplanation(false);
         }
+        setSelectedValue("");
+        setShowExplanation(false);
     };
 
     const restartQuiz = () => {
@@ -60,10 +56,8 @@ export default function VideoQuiz() {
         setSegmentFeedback({});
     };
 
-    // Feedback für das aktuelle Segment
     const currentFeedback = segmentFeedback[currentSegment] || "warning";
 
-    // Prüfen, ob nach diesem Segment das Quiz vorbei ist
     const isNextQuizDone =
         segment.question &&
         (segment.question.next.correct === "quiz_done" ||
@@ -78,6 +72,9 @@ export default function VideoQuiz() {
                     subtitle_name={segment.subtitles}
                 />
             )}
+
+            {/* Aufklappbare Anleitung über den RadioButtons */}
+            <Instruction quizType="videoQuiz" />
 
             {/* RadioButton nur anzeigen, wenn es eine Frage gibt und noch keine Erklärung */}
             {segment.question && !showExplanation && (
@@ -101,15 +98,21 @@ export default function VideoQuiz() {
                             segment.question.values.indexOf(selectedValue)
                             ]}
                     </p>
-                    <button className="submit-btn" onClick={handleNextSegment}>
-                        {isNextQuizDone ? "Quiz wiederholen" : "Weiter"}
-                    </button>
+                    {isNextQuizDone ? (
+                        <button className="restart-btn" onClick={handleNextSegment}>
+                            Quiz wiederholen
+                        </button>
+                    ) : (
+                        <button className="submit-btn" onClick={handleNextSegment}>
+                            Weiter
+                        </button>
+                    )}
                 </div>
             )}
 
             {/* Falls Segment quiz_done erreicht, Button zum Neustarten */}
             {!segment.question && !segment.video && (
-                <button className="submit-btn" onClick={restartQuiz}>
+                <button className="restart-btn" onClick={restartQuiz}>
                     Quiz wiederholen
                 </button>
             )}
