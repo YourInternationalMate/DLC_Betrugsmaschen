@@ -3,7 +3,7 @@ import { FaPlay, FaPause, FaRedo, FaChevronDown, FaChevronUp } from "react-icons
 import "./Video.scss";
 import subtitleObj from '../../data/subtitles/VideoSubtitles.json';
 
-const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name }) => {
+const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnded }) => {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -53,6 +53,7 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name }) => {
                 preload="metadata"
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
+                onEnded={onEnded}
             >
                 Ihr Browser unterstützt das Video-Tag nicht.
             </video>

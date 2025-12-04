@@ -1,0 +1,10 @@
+.explanation-container {
+
+  &.correct p.explanation {
+    color: var(--correct); // aus deiner index.css
+  }
+
+  &.incorrect p.explanation {
+    color: var(--incorrect); // aus deiner index.css
+  }
+}
