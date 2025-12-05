@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaPlay, FaPause, FaRedo, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Video.scss";
-import subtitleObj from '../../data/subtitles/VideoSubtitles.json';
+import subtitleObj from '../../data/VideoSubtitles.json';
 
-const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name }) => {
+const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnded }) => {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -44,6 +44,18 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name }) => {
         }
     };
 
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+            videoRef.current.load();
+        }
+
+        setIsPlaying(false);
+        setProgress(0);
+        setIsSubtitleOpen(false);
+    }, [video_name, subtitle_name]); //funktioniert nicht, wenn Video und Subtitle den gleichen Namen haben!
+
     return (
         <div className={`video-container ${widthClass}`}>
             <video
@@ -53,6 +65,9 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name }) => {
                 preload="metadata"
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
+                onEnded={onEnded}
+                onPlay={() => setIsPlaying(true)}   // synchronisation damit der play/pause Button sich richtig updated
+                onPause={() => setIsPlaying(false)}
             >
                 Ihr Browser unterstützt das Video-Tag nicht.
             </video>
