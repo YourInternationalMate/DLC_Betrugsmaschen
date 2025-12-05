@@ -65,7 +65,6 @@ export default function VideoQuiz() {
 
     return (
         <div className="video-quiz-container">
-            {/* Video nur anzeigen, wenn es existiert */}
             {segment.video && (
                 <VideoPlayer
                     video_name={segment.video}
@@ -73,10 +72,8 @@ export default function VideoQuiz() {
                 />
             )}
 
-            {/* Aufklappbare Anleitung über den RadioButtons */}
-            <Instruction quizType="videoQuiz" />
+            <Instruction quizType="videoQuiz"/>
 
-            {/* RadioButton nur anzeigen, wenn es eine Frage gibt und noch keine Erklärung */}
             {segment.question && !showExplanation && (
                 <RadioButton4
                     value1={segment.question.values[0]}
@@ -90,7 +87,6 @@ export default function VideoQuiz() {
                 />
             )}
 
-            {/* Erklärung und Button anzeigen */}
             {segment.question && showExplanation && (
                 <div className={`explanation-container ${currentFeedback}`}>
                     <p className="explanation">
@@ -110,7 +106,6 @@ export default function VideoQuiz() {
                 </div>
             )}
 
-            {/* Falls Segment quiz_done erreicht, Button zum Neustarten */}
             {!segment.question && !segment.video && (
                 <button className="restart-btn" onClick={restartQuiz}>
                     Quiz wiederholen

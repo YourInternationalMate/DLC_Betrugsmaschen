@@ -44,6 +44,18 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnde
         }
     };
 
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+            videoRef.current.load();
+        }
+
+        setIsPlaying(false);
+        setProgress(0);
+        setIsSubtitleOpen(false);
+    }, [video_name, subtitle_name]); //funktioniert nicht, wenn Video und Subtitle den gleichen Namen haben!
+
     return (
         <div className={`video-container ${widthClass}`}>
             <video
@@ -54,6 +66,8 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnde
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
                 onEnded={onEnded}
+                onPlay={() => setIsPlaying(true)}   // synchronisation damit der play/pause Button sich richtig updated
+                onPause={() => setIsPlaying(false)}
             >
                 Ihr Browser unterstützt das Video-Tag nicht.
             </video>

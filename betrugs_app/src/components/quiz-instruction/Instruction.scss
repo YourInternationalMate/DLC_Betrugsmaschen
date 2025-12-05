@@ -1,31 +1,22 @@
-.instruction-container {
-  margin-bottom: 16px;
+.instruction-box {
+  display: flex;
+  color: var(--bg-instruction, #f5f5f5);
+  width: 80%;
+  margin: 0 auto;
+}
 
-  .instruction-box {
-    background-color: var(--bg-instruction, #f5f5f5);
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+.toggle-btn {
+  margin-left: 85%;
+  margin-top: 10px;
+  width: 50px;
+  height: 35px;
+  border-radius: 20.5px;
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+}
 
-    p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-  }
-
-  .toggle-btn {
-    background-color: var(--txt-color);
-    color: var(--bg-color);
-    width: 50px;
-    height: 35px;
-    border-radius: 20.5px;
-    border: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
-  }
-
-  .toggle-btn:active {
-    background-color: var(--btn-disabled);
-  }
+.toggle-btn:active {
+  background-color: var(--btn-disabled);
 }
