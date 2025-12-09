@@ -1,0 +1,70 @@
+.image-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.quiz-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.hotspot {
+  background: transparent;
+  position: absolute;
+  border-radius: 6px;
+  border-width: 3px;
+  transition: 0.2s;
+}
+
+.hotspot.hidden {
+  background: transparent;
+  border-color: transparent;
+}
+
+.hotspot.correct {
+  border-color: var(--correct);
+}
+
+.hotspot.wrong {
+  border-color: var(--incorrect);
+}
+
+.explanation-box {
+  width: 78%;
+  padding: 10px;
+  margin: 10px auto;
+  background: var(--background-color);
+  border-radius: 8px;
+  border: 5px solid;
+}
+
+.explanation-box.correct {
+  border-color: var(--correct);
+}
+
+.explanation-box.incorrect {
+  border-color: var(--incorrect);
+}
+
+.finished-container {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finished-container .success-message {
+  font-weight: bold;
+}
+
+.finished-container .button-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

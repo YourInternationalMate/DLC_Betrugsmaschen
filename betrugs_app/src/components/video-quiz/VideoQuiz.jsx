@@ -49,7 +49,7 @@ export default function VideoQuiz() {
         setShowExplanation(false);
     };
 
-    const restartQuiz = () => {
+    const handleRestart = () => {
         setCurrentSegment("intro");
         setSelectedValue("");
         setShowExplanation(false);
@@ -65,52 +65,60 @@ export default function VideoQuiz() {
 
     return (
         <div className="video-quiz-container">
+
             {segment.video && (
-                <VideoPlayer
-                    video_name={segment.video}
-                    subtitle_name={segment.subtitles}
-                />
-            )}
-
-            <Instruction quizType="videoQuiz"/>
-
-            {segment.question && !showExplanation && (
-                <RadioButton4
-                    value1={segment.question.values[0]}
-                    value2={segment.question.values[1]}
-                    value3={segment.question.values[2]}
-                    value4={segment.question.values[3]}
-                    selectedValue={selectedValue}
-                    onChange={handleRadioChange}
-                    handleSubmit={handleRadioSubmit}
-                    feedbackStatus={currentFeedback}
-                />
-            )}
-
-            {segment.question && showExplanation && (
-                <div className={`explanation-container ${currentFeedback}`}>
-                    <p className="explanation">
-                        {segment.question.explanations[
-                            segment.question.values.indexOf(selectedValue)
-                            ]}
-                    </p>
-                    {isNextQuizDone ? (
-                        <button className="restart-btn" onClick={handleNextSegment}>
-                            Quiz wiederholen
-                        </button>
-                    ) : (
-                        <button className="submit-btn" onClick={handleNextSegment}>
-                            Weiter
-                        </button>
-                    )}
+                <div className="video-wrapper">
+                    <VideoPlayer
+                        video_name={segment.video}
+                        subtitle_name={segment.subtitles}
+                    />
                 </div>
             )}
 
-            {!segment.question && !segment.video && (
-                <button className="restart-btn" onClick={restartQuiz}>
-                    Quiz wiederholen
-                </button>
-            )}
+            <div className="instruction-wrapper">
+                <Instruction quizType="videoQuiz" />
+            </div>
+
+            <div className="quiz-wrapper">
+                <div className="radio-btn-container">
+                    {segment.question && !showExplanation && (
+                        <RadioButton4
+                            value1={segment.question.values[0]}
+                            value2={segment.question.values[1]}
+                            value3={segment.question.values[2]}
+                            value4={segment.question.values[3]}
+                            selectedValue={selectedValue}
+                            onChange={handleRadioChange}
+                            handleSubmit={handleRadioSubmit}
+                            feedbackStatus={currentFeedback}
+                        />
+                    )}
+                </div>
+
+                {segment.question && showExplanation && (
+                    <div className={`explanation-container ${currentFeedback}`}>
+                        <p className="explanation">
+                            {segment.question.explanations[
+                                segment.question.values.indexOf(selectedValue)
+                                ]}
+                        </p>
+
+                        {isNextQuizDone ? (
+                            <div className="finished-container">
+                                <p className="success-message">Du hast alle Fragen beantwortet. Gut gemacht!</p>
+                                <div className="button-row">
+                                    <button className="restart-btn" onClick={handleRestart}>Quiz wiederholen</button>
+                                    <button className="next-btn">WeiterTest</button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="submit-container">
+                                <button className="submit-btn" onClick={handleNextSegment}>Weiter</button>
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

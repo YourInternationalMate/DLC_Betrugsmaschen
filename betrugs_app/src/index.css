@@ -51,8 +51,22 @@ a {
   background-color: var(--btn-disabled);
 }
 
-/* Themes */
+.restart-btn,.next-btn {
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+    width: 130px;
+    height: 65px;
+    border-radius: 20.5px;
+    border: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
 
+.restart-btn:active,.next-btn:active {
+    background-color: var(--btn-disabled);
+}
+
+/* Themes */
 [data-theme="dark"] {
   --bg-color: #202020;
   --txt-color: #F3F3F3;

@@ -1,4 +1,19 @@
+/* Keine Ahnung wie das gedacht war, kann man auch wieder löschen */
+
+.explanation {
+  margin-left: 10%;
+}
+
+.radio-btn-container {
+  margin-left: 5%;
+}
+
 .explanation-container {
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
   &.correct p.explanation {
     color: var(--correct);
@@ -7,19 +22,14 @@
   &.incorrect p.explanation {
     color: var(--incorrect);
   }
+
+  .button-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
-.restart-btn {
-  background-color: var(--txt-color);
-  color: var(--bg-color);
-  width: 130px;
-  height: 65px;
-  border-radius: 20.5px;
-  border: 0;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 20px;
-}
-
-.restart-btn:active {
-  background-color: var(--btn-disabled);
+.submit-container {
+  margin-left: 10%;
 }
