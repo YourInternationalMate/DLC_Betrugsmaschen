@@ -10,7 +10,6 @@ export default function HotspotQuiz() {
     const handleHotspotClick = (hs) => {
         setSelectedHotspot(hs);
 
-        // Hotspot dauerhaft sichtbar machen
         setRevealedHotspots(prev =>
             prev.includes(hs.id) ? prev : [...prev, hs.id]
         );
