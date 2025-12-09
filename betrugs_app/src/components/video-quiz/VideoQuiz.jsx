@@ -1,17 +1,16 @@
 import { useState } from "react";
-import quizFlow from "./VideoQuiz.json";
 import VideoPlayer from "../Video/Video.jsx";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
 import Instruction from "../quiz-instruction/Instruction.jsx";
 import "./VideoQuiz.scss";
 
-export default function VideoQuiz() {
+export default function VideoQuiz( {config}) {
     const [currentSegment, setCurrentSegment] = useState("intro");
     const [selectedValue, setSelectedValue] = useState("");
     const [showExplanation, setShowExplanation] = useState(false);
     const [segmentFeedback, setSegmentFeedback] = useState({});
 
-    const segment = quizFlow[currentSegment];
+    const segment = config[currentSegment];
 
     const handleRadioChange = (event) => {
         setSelectedValue(event.target.value);
