@@ -1,9 +1,8 @@
 import { useState } from "react";
-import hotspotConfig from "./HotspotQuiz.json";
 import "./HotspotQuiz.scss";
 import Instruction from "../quiz-instruction/Instruction";
 
-export default function HotspotQuiz() {
+export default function HotspotQuiz( {config}) {
     const [selectedHotspot, setSelectedHotspot] = useState(null);
     const [revealedHotspots, setRevealedHotspots] = useState([]);
 
@@ -20,7 +19,7 @@ export default function HotspotQuiz() {
         setRevealedHotspots([]);
     };
 
-    const allCorrectClicked = hotspotConfig.hotspots
+    const allCorrectClicked = config.hotspots
         .filter(hs => hs.isCorrect)
         .every(hs => revealedHotspots.includes(hs.id));
 
@@ -29,12 +28,12 @@ export default function HotspotQuiz() {
 
             <div className="image-wrapper">
                 <img
-                    src={hotspotConfig.quiz_meta.image}
+                    src={config.quiz_meta.image}
                     alt="Hotspot Quiz"
                     className="quiz-image"
                 />
 
-                {hotspotConfig.hotspots.map(hs => {
+                {config.hotspots.map(hs => {
                     const isRevealed = revealedHotspots.includes(hs.id);
 
                     return (
