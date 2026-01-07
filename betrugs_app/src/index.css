@@ -17,6 +17,12 @@ h2 {
   font-size: 96px;
 }
 
+h3 {
+  color: var(--txt-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+}
+
 p {
   color: var(--txt-color);
   font-family: 'Tahoma', Arial, sans-serif;
