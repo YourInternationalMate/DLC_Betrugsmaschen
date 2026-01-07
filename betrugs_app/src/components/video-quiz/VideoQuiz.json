@@ -1,0 +1,137 @@
+{
+  "instructions": "Du siehst nun ein Video zum Thema xy, welches in mehrere Segmente aufgeteilt ist. Am Ende eines jeden Segments erhältst du eine Multiple-Choice-Frage (Mehrfachauswahl möglich), wessen Richtigkeit über den weiteren Verlauf des Videos entscheidet. Viel Erfolg!",
+  "intro": {
+    "video": "videoQuizTest1.mp4",
+    "subtitles": "subtitle_Video1",
+    "question": {
+      "variant": 4,
+      "values": ["Antwort A", "Antwort B", "Antwort C", "Intro Segment"],
+      "correctValue": "Antwort A",
+      "explanations": [
+        "Richtig! Antwort A ist korrekt.",
+        "Falsch! Antwort B passt nicht.",
+        "Falsch! Antwort C passt nicht.",
+        "Falsch! Intro Segment passt nicht."
+      ],
+      "next": {
+        "correct": "segment2",
+        "incorrect": "segment3"
+      }
+    }
+  },
+  "segment2": {
+    "video": "videoQuizTest2.mp4",
+    "subtitles": "subtitle_Video2",
+    "question": {
+      "variant": 4,
+      "values": ["Option 1", "Option 2", "Option 3", "Segment2"],
+      "correctValue": "Option 2",
+      "explanations": [
+        "Falsch! Option 1 passt nicht.",
+        "Richtig! Option 2 ist korrekt.",
+        "Falsch! Option 3 passt nicht.",
+        "Falsch! Segment2 passt nicht."
+      ],
+      "next": {
+        "correct": "segment4",
+        "incorrect": "segment5"
+      }
+    }
+  },
+  "segment3": {
+    "video": "videoQuizTest3.mp4",
+    "subtitles": "subtitle_Video3",
+    "question": {
+      "variant": 4,
+      "values": ["Option A", "Option B", "Option C", "Segment3"],
+      "correctValue": "Option B",
+      "explanations": [
+        "Falsch! Option A passt nicht.",
+        "Richtig! Option B ist korrekt.",
+        "Falsch! Option C passt nicht.",
+        "Falsch! Segment3 passt nicht."
+      ],
+      "next": {
+        "correct": "segment6",
+        "incorrect": "segment7"
+      }
+    }
+  },
+  "segment4": {
+    "video": "videoQuizTest1.mp4",
+    "subtitles": "subtitle_Video1",
+    "question": {
+      "variant": 4,
+      "values": ["Antwort 1", "Antwort 2", "Antwort 3", "Segment4"],
+      "correctValue": "Antwort 1",
+      "explanations": [
+        "Richtig! Antwort 1 ist korrekt.",
+        "Falsch! Antwort 2 passt nicht.",
+        "Falsch! Antwort 3 passt nicht.",
+        "Falsch! Segment4 passt nicht."
+      ],
+      "next": {
+        "correct": "quiz_done",
+        "incorrect": "quiz_done"
+      }
+    }
+  },
+  "segment5": {
+    "video": "videoQuizTest2.mp4",
+    "subtitles": "subtitle_Video2",
+    "question": {
+      "variant": 4,
+      "values": ["Antwort A", "Antwort B", "Antwort C", "Segment5"],
+      "correctValue": "Antwort B",
+      "explanations": [
+        "Falsch! Antwort A passt nicht.",
+        "Richtig! Antwort B ist korrekt.",
+        "Falsch! Antwort C passt nicht.",
+        "Falsch! Segment5 passt nicht."
+      ],
+      "next": {
+        "correct": "quiz_done",
+        "incorrect": "quiz_done"
+      }
+    }
+  },
+  "segment6": {
+    "video": "videoQuizTest3.mp4",
+    "subtitles": "subtitle_Video3",
+    "question": {
+      "variant": 4,
+      "values": ["Option 1", "Option 2", "Option 3", "Segment6"],
+      "correctValue": "Option 3",
+      "explanations": [
+        "Falsch! Option 1 passt nicht.",
+        "Falsch! Option 2 passt nicht.",
+        "Richtig! Option 3 ist korrekt.",
+        "Falsch! Segment6 passt nicht."
+      ],
+      "next": {
+        "correct": "quiz_done",
+        "incorrect": "quiz_done"
+      }
+    }
+  },
+  "segment7": {
+    "video": "videoQuizTest1.mp4",
+    "subtitles": "subtitle_Video1",
+    "question": {
+      "variant": 4,
+      "values": ["Antwort A", "Antwort B", "Antwort C", "Segment7"],
+      "correctValue": "Antwort C",
+      "explanations": [
+        "Falsch! Antwort A passt nicht.",
+        "Falsch! Antwort B passt nicht.",
+        "Richtig! Antwort C ist korrekt.",
+        "Falsch! Segment7 passt nicht."
+      ],
+      "next": {
+        "correct": "quiz_done",
+        "incorrect": "quiz_done"
+      }
+    }
+  },
+  "quiz_done": {}
+}

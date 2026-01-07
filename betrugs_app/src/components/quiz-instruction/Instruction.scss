@@ -1,0 +1,22 @@
+.instruction-box {
+  display: flex;
+  color: var(--bg-instruction, #f5f5f5);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.toggle-btn {
+  margin-left: 85%;
+  margin-top: 10px;
+  width: 50px;
+  height: 35px;
+  border-radius: 20.5px;
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+}
+
+.toggle-btn:active {
+  background-color: var(--btn-disabled);
+}

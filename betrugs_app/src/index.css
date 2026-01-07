@@ -25,8 +25,10 @@ h3 {
 
 p {
   color: var(--txt-color);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 20px; /* Müssen wir mal gucken */
+  font-family: 'Tahoma', Arial, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
 a {
@@ -51,11 +53,16 @@ a {
     font-size: 20px;
 }
 
+.submit-btn:active {
+  background-color: var(--btn-disabled);
+}
+
 /* Themes */
 
 [data-theme="dark"] {
   --bg-color: #202020;
   --txt-color: #F3F3F3;
+  --btn-disabled: #6f6f6f;
   --correct: #2e9f35;
   --incorrect: #c54b4b;
   --warning: #d39a45;
@@ -64,6 +71,7 @@ a {
 [data-theme="light"] {
   --bg-color: #F3F3F3;
   --txt-color: #202020;
+  --btn-disabled: #6f6f6f;
   --correct: #1b5e20;
   --incorrect: #b71c1c;
   --warning: #c77800;
