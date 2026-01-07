@@ -24,3 +24,9 @@
 .quiz-feedback.warning {
   color: var(--warning);
 }
+
+.quiz-question {
+  margin: 0;
+  width: 80%;
+  box-sizing: border-box;
+}

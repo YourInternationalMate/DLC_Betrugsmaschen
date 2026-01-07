@@ -11,6 +11,7 @@ import Video from "../Video/Video";
 // correctValue={""}-Wert der auch in Value eingetragen wird
 function MultipleChoiceQuiz({
   variant,
+  question,
   value1,
   value2,
   value3,
@@ -117,6 +118,7 @@ function MultipleChoiceQuiz({
   return (
     <div className="quiz-container">
       <Video widthClass="w-80" path={"test_Video.mp4"} />
+      <h3 className="quiz-question">{question}</h3>
       <div className="radio-btn-container">
         {content}
         {feedback && feedback.status !== "warning" && (
