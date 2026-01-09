@@ -6,5 +6,9 @@
   "textQuiz": {
     "title": "Text Quiz Anleitung",
     "text": "Beantworte die folgenden Fragen auf Basis des bereitgestellten Textmaterials. Jede richtige Antwort bringt dich zum nächsten Abschnitt. Viel Erfolg!"
-  }
+  },
+  "hotSpotQuiz": {
+    "title": "Hotspot Quiz Anleitung",
+    "text": "Oben siehst du ein Beispiel für eine Phishing E-Mail. Wähle mit der Maus alle Bereiche aus, die für dich darauf hindeuten, dass es sich um eine solche E-Mail handelt"
+}
 }
