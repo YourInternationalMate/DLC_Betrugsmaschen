@@ -21,3 +21,9 @@
 .toggle-btn:active {
   background-color: var(--btn-disabled);
 }
+
+@media (max-width: 620px) {
+  .instruction-box {
+    width: 100%;
+  }
+}

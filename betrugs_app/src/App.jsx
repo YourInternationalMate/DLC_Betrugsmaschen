@@ -15,7 +15,7 @@ function App() {
       <main>
         <h1>BETRUGSMASCHEN<br />IM INTERNET.</h1>
         <section>
-          <VideoPlayer widthClass="w-80" video_name={"videoQuizTest1.mp4"} />
+          <VideoPlayer video_name={"videoQuizTest1.mp4"} />
         </section>
         <section>
           <HotspotQuiz config={hotspotQuizConfig1}/>
@@ -33,7 +33,7 @@ function App() {
           <MultipleChoiceQuiz config={multipleChoiceConfig1} />
         </section>
         <section>
-          <VideoPlayer widthClass="w-80" video_name={"videoQuizTest1.mp4"} />
+          <VideoPlayer video_name={"videoQuizTest1.mp4"} />
         </section>
       </main>
     </div>

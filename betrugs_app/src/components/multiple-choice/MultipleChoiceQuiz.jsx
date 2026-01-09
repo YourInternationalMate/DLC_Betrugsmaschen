@@ -122,22 +122,22 @@ function MultipleChoiceQuiz({ config }) {
   return (
     <>
       {videoName && (
-        <VideoPlayer widthClass="w-80" video_name={videoName} subtitle_name={subtitleName} />
+        <VideoPlayer video_name={videoName} subtitle_name={subtitleName} />
       )}
       
       <Instruction quizType="multipleChoiceQuiz" />
       
-      <h3 className="quiz-question">{question}</h3>
       <div className="radio-btn-container">
-        {content}
-        {feedback && feedback.status !== "warning" && (
-          <p className={`quiz-feedback ${feedback.status}`}>
-            {feedback.message}
-          </p>
-        )}
-        {feedback?.status === "warning" && (
-          <p className="quiz-feedback warning">{feedback.message}</p>
-        )}
+        <h3 className="quiz-question">{question}</h3>
+          {content}
+          {feedback && feedback.status !== "warning" && (
+            <p className={`quiz-feedback ${feedback.status}`}>
+              {feedback.message}
+            </p>
+          )}
+          {feedback?.status === "warning" && (
+            <p className="quiz-feedback warning">{feedback.message}</p>
+          )}
       </div>
     </>
   );

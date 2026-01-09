@@ -76,7 +76,6 @@ export default function VideoQuiz( {config}) {
 
             <Instruction quizType="videoQuiz" />
 
-            <div className="quiz-wrapper">
                 <div className="radio-btn-container">
                     {segment.question && !showExplanation && (
                         <RadioButton4
@@ -115,7 +114,6 @@ export default function VideoQuiz( {config}) {
                         )}
                     </div>
                 )}
-            </div>
         </div>
     );
 }

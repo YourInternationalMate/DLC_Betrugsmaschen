@@ -46,7 +46,7 @@ function DragAndDrop({ config }) {
 
   return (
     <>
-      <VideoPlayer widthClass="w-80" video_name={videoName} subtitle_name={subtitleName}/>
+      <VideoPlayer video_name={videoName} subtitle_name={subtitleName}/>
       <Instruction quizType="dragAndDropQuiz" />
       <div className="dnd-container">
         <div className="dnd-btn-row">

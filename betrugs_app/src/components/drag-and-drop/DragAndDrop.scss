@@ -45,3 +45,9 @@
 .dnd-btn:active {
     color: var(--btn-disabled);
 }
+
+@media (max-width: 620px) {
+  .dnd-container {
+    width: 100%;
+  }
+}
