@@ -38,10 +38,6 @@ a {
   text-align: center;
 }
 
-.quiz-container {
-  height: 600px;
-}
-
 .submit-btn {
     background-color: var(--txt-color);
     color: var(--bg-color);
@@ -51,6 +47,7 @@ a {
     border: 0;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 20px;
+    margin-left: 10%;
 }
 
 .submit-btn:active {

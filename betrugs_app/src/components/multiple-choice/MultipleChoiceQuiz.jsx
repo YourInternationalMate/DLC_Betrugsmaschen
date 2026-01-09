@@ -3,47 +3,51 @@ import "./MultipleChoiceQuiz.css";
 import RadioButton2 from "../radio-buttons/RadioButton-2";
 import RadioButton3 from "../radio-buttons/RadioButton-3";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
-import Video from "../Video/Video";
+import VideoPlayer from "../Video/Video";
+import Instruction from "../quiz-instruction/Instruction.jsx";
 
-// variant={Zahl, wieviele Möglichkeiten 2-4} 
-// value1={""}-value4 
-// explanations={["Test1 ist falsch", ..4]} 
-// correctValue={""}-Wert der auch in Value eingetragen wird
-function MultipleChoiceQuiz({
-  variant,
-  question,
-  value1,
-  value2,
-  value3,
-  value4,
-  correctValue,
-  explanations,
-}) {
+function MultipleChoiceQuiz({ config }) {
+
+  const {
+    variant: variantFromConfig,
+    question,
+    videoName,
+    subtitleName,
+    correctValue,
+    options = [],
+    explanations,
+  } = config;
+
+  const values = options.map((option) => option?.value).filter(Boolean);
+
+  const computedVariant = variantFromConfig || values.length;
   const [selectedValue, setSelectedValue] = useState("");
   const [feedback, setFeedback] = useState(null);
-  const answerOptions = useMemo(
-    () =>
-      [value1, value2, value3, value4].filter((option) => option !== undefined),
-    [value1, value2, value3, value4]
-  );
 
   const explanationMap = useMemo(() => {
-    if (!explanations) {
-      return {};
+    const map = {};
+
+    options.forEach((option) => {
+      if (option?.explanation) {
+        map[option.value] = option.explanation;
+      }
+    });
+
+    if (explanations) {
+      if (Array.isArray(explanations)) {
+        values.forEach((value, index) => {
+          const explanationText = explanations[index];
+          if (explanationText) {
+            map[value] = explanationText;
+          }
+        });
+      } else {
+        Object.assign(map, explanations);
+      }
     }
 
-    if (Array.isArray(explanations)) {
-      return answerOptions.reduce((map, optionValue, index) => {
-        const explanationText = explanations[index];
-        if (explanationText) {
-          map[optionValue] = explanationText;
-        }
-        return map;
-      }, {});
-    }
-
-    return explanations;
-  }, [answerOptions, explanations]);
+    return map;
+  }, [options, explanations, values]);
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -84,18 +88,18 @@ function MultipleChoiceQuiz({
 
   let content;
 
-  switch (variant) {
+  switch (computedVariant) {
     case 2:
       content = (
-        <RadioButton2 value1={value1} value2={value2} {...sharedProps} />
+        <RadioButton2 value1={values[0]} value2={values[1]} {...sharedProps} />
       );
       break;
     case 3:
       content = (
         <RadioButton3
-          value1={value1}
-          value2={value2}
-          value3={value3}
+          value1={values[0]}
+          value2={values[1]}
+          value3={values[2]}
           {...sharedProps}
         />
       );
@@ -103,10 +107,10 @@ function MultipleChoiceQuiz({
     case 4:
       content = (
         <RadioButton4
-          value1={value1}
-          value2={value2}
-          value3={value3}
-          value4={value4}
+          value1={values[0]}
+          value2={values[1]}
+          value3={values[2]}
+          value4={values[3]}
           {...sharedProps}
         />
       );
@@ -116,8 +120,13 @@ function MultipleChoiceQuiz({
   }
 
   return (
-    <div className="quiz-container">
-      <Video widthClass="w-80" path={"test_Video.mp4"} />
+    <>
+      {videoName && (
+        <VideoPlayer widthClass="w-80" video_name={videoName} subtitle_name={subtitleName} />
+      )}
+      
+      <Instruction quizType="multipleChoiceQuiz" />
+      
       <h3 className="quiz-question">{question}</h3>
       <div className="radio-btn-container">
         {content}
@@ -130,7 +139,7 @@ function MultipleChoiceQuiz({
           <p className="quiz-feedback warning">{feedback.message}</p>
         )}
       </div>
-    </div>
+    </>
   );
 }
 

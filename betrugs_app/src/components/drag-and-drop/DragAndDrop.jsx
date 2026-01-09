@@ -1,20 +1,18 @@
 import "./DragAndDrop.scss";
-import { useState } from "react";
-import Video from "../Video/Video";
+import { Fragment, useState } from "react";
+import VideoPlayer from "../Video/Video";
+import Instruction from "../quiz-instruction/Instruction";
 
-//TODO: Text muss angepasst werden
-//TODO: defaultWords + correctWords
-//TODO:Buttons im Text platzieren
-function DragAndDrop() {
-  const defaultWords = {
-    test: "test",
-    test1: "test1",
-  };
+function DragAndDrop({ config }) {
 
-  const correctsWords = {
-    test: "Ciao",
-    test1: "Hallo",
-  };
+  const {
+    paragraphParts = [],
+    defaultWords = {},
+    correctWords = {},
+    wordOptions = [],
+    videoName,
+    subtitleName
+  } = config;
 
   const [selectedWords, setSelectedWords] = useState(defaultWords);
 
@@ -31,8 +29,8 @@ function DragAndDrop() {
   };
 
   const handleClick_check = () => {
-    const isCorrect = Object.keys(correctsWords).every(
-      (key) => selectedWords[key] === correctsWords[key]
+    const isCorrect = Object.keys(correctWords).every(
+      (key) => selectedWords[key] === correctWords[key]
     );
     console.log(isCorrect ? "PASST SO" : "PASST NICHT");
   };
@@ -47,66 +45,45 @@ function DragAndDrop() {
     });
 
   return (
-    <div className="quiz-container">
-      <Video widthClass="w-60" path={"test_Video.mp4"} />
+    <>
+      <VideoPlayer widthClass="w-80" video_name={videoName} subtitle_name={subtitleName}/>
+      <Instruction quizType="dragAndDropQuiz" />
       <div className="dnd-container">
         <div className="dnd-btn-row">
-          <button
-            className="dnd-btn"
-            disabled={isWordAssigned("Hallo")}
-            onClick={() => handleClick_selection("Hallo")}
-          >
-            Hallo
-          </button>
-          <button
-            className="dnd-btn"
-            disabled={isWordAssigned("Ciao")}
-            onClick={() => handleClick_selection("Ciao")}
-          >
-            Ciao
-          </button>
-          <button
-            className="dnd-btn"
-            disabled={isWordAssigned("Test")}
-            onClick={() => handleClick_selection("Test")}
-          >
-            Test
-          </button>
+          {wordOptions.map(({ label, value }) => (
+            <button
+              key={value}
+              className="dnd-btn"
+              disabled={isWordAssigned(value)}
+              onClick={() => handleClick_selection(value)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
-        <div className="dnd-text">
+        <div className="dnd-txt">
           <p>
-            Lorem ipsum dolor sit{" "}
-            <button
-              className="dnd-btn-txt"
-              name="test"
-              onClick={(event) => handleClick_Input(event, selectedWord)}
-            >
-              {selectedWords.test}
-            </button>
-            , consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-            amet. Lorem ipsum dolor sit{" "}
-            <button
-              className="dnd-btn-txt"
-              name="test1"
-              onClick={(event) => handleClick_Input(event, selectedWord)}
-            >
-              {selectedWords.test1}
-            </button>
-            , consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-            amet.
+            {paragraphParts.map((part, index) =>
+              typeof part === "string" ? (
+                <Fragment key={`text-${index}`}>{part}</Fragment>
+              ) : (
+                <button
+                  key={`slot-${part.slot}-${index}`}
+                  className="dnd-btn-txt"
+                  name={part.slot}
+                  onClick={(event) => handleClick_Input(event, selectedWord)}
+                >
+                  {selectedWords[part.slot]}
+                </button>
+              )
+            )}
           </p>
         </div>
       </div>
       <button className="submit-btn" onClick={handleClick_check}>
         ✓
       </button>
-    </div>
+    </>
   );
 }
 

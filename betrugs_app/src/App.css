@@ -9,3 +9,9 @@
 main h1 {
     margin: 0;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

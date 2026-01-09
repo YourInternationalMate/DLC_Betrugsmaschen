@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaPlay, FaPause, FaRedo, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./Video.scss";
 import subtitleObj from '../../data/VideoSubtitles.json';
