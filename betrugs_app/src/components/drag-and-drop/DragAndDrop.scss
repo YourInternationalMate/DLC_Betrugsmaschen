@@ -2,13 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15px;
+    margin: 15px auto 0;
+    width: 80%;
 }
 
 .dnd-btn-row {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.dnd-txt {
+  text-align: center;
+  width: 100%;
 }
 
 .dnd-btn-txt {

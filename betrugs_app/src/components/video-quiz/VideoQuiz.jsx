@@ -1,7 +1,7 @@
 import { useState } from "react";
 import VideoPlayer from "../Video/Video.jsx";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
-import Instruction from "../quiz-instruction/Instruction.jsx";
+import Instruction from "../quiz-instruction/Instruction";
 import "./VideoQuiz.scss";
 
 export default function VideoQuiz( {config}) {
@@ -74,9 +74,7 @@ export default function VideoQuiz( {config}) {
                 </div>
             )}
 
-            <div className="instruction-wrapper">
-                <Instruction quizType="videoQuiz" />
-            </div>
+            <Instruction quizType="videoQuiz" />
 
             <div className="quiz-wrapper">
                 <div className="radio-btn-container">

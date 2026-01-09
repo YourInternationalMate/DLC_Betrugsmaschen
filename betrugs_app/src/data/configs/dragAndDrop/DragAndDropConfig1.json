@@ -1,0 +1,24 @@
+{
+  "videoName": "test_Video.mp4",
+  "subtitleName": "subtitle_Video1",
+  "wordOptions": [
+    { "label": "Hallo", "value": "Hallo" },
+    { "label": "Ciao", "value": "Ciao" },
+    { "label": "Test", "value": "Test" }
+  ],
+  "defaultWords": {
+    "test": "test",
+    "test1": "test1"
+  },
+  "correctWords": {
+    "test": "Ciao",
+    "test1": "Hallo"
+  },
+  "paragraphParts": [
+    "Lorem ipsum dolor sit ",
+    { "slot": "test" },
+    ", consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit ",
+    { "slot": "test1" },
+    ", consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+  ]
+}

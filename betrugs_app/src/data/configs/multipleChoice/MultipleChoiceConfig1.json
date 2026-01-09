@@ -1,0 +1,12 @@
+{
+  "variant": 3,
+  "question": "Frage aller Fragen",
+  "videoName": "videoQuizTest1.mp4",
+  "subtitleName": "subtitle_Video1",
+  "options": [
+    { "value": "Test1", "explanation": "Test1 ist falsch" },
+    { "value": "Test2", "explanation": "1" },
+    { "value": "Test3", "explanation": "Test3 ist falsch" }
+  ],
+  "correctValue": "Test3"
+}

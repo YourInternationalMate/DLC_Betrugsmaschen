@@ -10,5 +10,13 @@
   "hotSpotQuiz": {
     "title": "Hotspot Quiz Anleitung",
     "text": "Oben siehst du ein Beispiel für eine Phishing E-Mail. Wähle mit der Maus alle Bereiche aus, die für dich darauf hindeuten, dass es sich um eine solche E-Mail handelt"
-}
+  },
+  "dragAndDropQuiz": {
+    "title": "Drag and Drop Quiz Anleitung",
+    "text": "Sieh dir das Video an und fülle den Text darunter. Klicke erst auf eine der vorgegebenen Wortkarten und danach auf eine Lücke im Text, um das Wort einzusetzen. Falls du dich umentscheiden willst, klicke ohne Auswahl erneut auf die Lücke, um zum Platzhalter zurückzukehren. Wenn alle Lücken gefüllt sind, bestätige mit ✓, um deine Zuordnung zu prüfen."
+  },
+  "multipleChoiceQuiz": {
+    "title": "Multiple Choice Quiz Anleitung",
+    "text": "Lies die Frage (und schau dir ggf. das Video an) und wähle die passende Antwort aus den vorgegebenen Optionen. Markiere deine Wahl und sende sie mit ✓ ab. Anschließend erhältst du sofort Feedback und eine kurze Erklärung zu deiner Auswahl."
+  }
 }
