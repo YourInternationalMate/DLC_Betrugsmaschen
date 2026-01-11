@@ -6,32 +6,16 @@ import "./Navigation.css";
 
 import NavigationElement from "../navigation-element/NavigationElement";
 
-function Navigation() {
+function Navigation({ items }) {
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
-  const [items, setItems] = useState([
-    { to: "/", label: "Einleitung", checked: false },
-    { to: "/phishing", label: "Phishing", checked: false },
-    { to: "/socialengineering", label: "Social Engineering", checked: false },
-    { to: "/onlineshopping", label: "Online Shopping", checked: false },
-    { to: "/kibetrug", label: "KI-Betrug", checked: false },
-    { to: "/verhalten", label: "Verhalten", checked: false },
-    { to: "/zusammenfassung", label: "Zusammenfassung", checked: false },
-  ]);
-
+  
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
-  };
-
-  const toggleChecked = (to) => {
-    // TODO: muss nach Abschluss getoggled werden (einfach Kapitel ID übergeben "#test")
-    setItems((prev) =>
-      prev.map((item) => (item.to === to ? { ...item, checked: true } : item))
-    );
   };
 
   return (
