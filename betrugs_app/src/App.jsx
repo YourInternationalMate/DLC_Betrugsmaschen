@@ -1,42 +1,49 @@
 import "./App.css";
-import DragAndDrop from "./components/drag-and-drop/DragAndDrop";
-import VideoQuiz from "./components/video-quiz/VideoQuiz.jsx";
-import HotspotQuiz from "./components/hotspot-quiz/HotspotQuiz.jsx";
-import hotspotQuizConfig1 from "./data/configs/hotspotQuiz/HotspotQuizConfig1.json"
-import videoQuizConfig1 from "./data/configs/videoQuiz/VideoQuizConfig1.json"
-import dragAndDropConfig1 from "./data/configs/dragAndDrop/DragAndDropConfig1.json";
-import multipleChoiceConfig1 from "./data/configs/multipleChoice/MultipleChoiceConfig1.json";
-import VideoPlayer from "./components/Video/Video.jsx";
-import MultipleChoiceQuiz from "./components/multiple-choice/MultipleChoiceQuiz.jsx";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Navigation from "./components/navigation/Navigation";
+import Einleitung from "./pages/1_Einleitung.jsx";
+import Phishing from "./pages/2_Phishing.jsx";
+import SocialEngineering from "./pages/3_SocialEngineering.jsx";
+import OnlineShopping from "./pages/4_OnlineShopping.jsx";
+import KiBetrug from "./pages/5_KiBetrug.jsx";
+import Verhalten from "./pages/6_Verhalten.jsx";
+import Zusammenfassung from "./pages/7_Zusammenfassung.jsx";
 
 function App() {
+  const navigate = useNavigate();
+  const [items, setItems] = useState([
+      { to: "/", label: "Einleitung", checked: false },
+      { to: "/phishing", label: "Phishing", checked: false },
+      { to: "/socialengineering", label: "Social Engineering", checked: false },
+      { to: "/onlineshopping", label: "Online Shopping", checked: false },
+      { to: "/kibetrug", label: "KI-Betrug", checked: false },
+      { to: "/verhalten", label: "Verhalten", checked: false },
+      { to: "/zusammenfassung", label: "Zusammenfassung", checked: false },
+    ]);
+
+  const toggleChecked = (to, path) => {
+    setItems((prev) =>
+      prev.map((item) => (item.to === to ? { ...item, checked: true } : item))
+    );
+    navigate(path);
+  };
+
   return (
+    <>
+    <Navigation items={items} />
     <div className="app-shell">
-      <main>
-        <h1>BETRUGSMASCHEN<br />IM INTERNET.</h1>
-        <section>
-          <VideoPlayer widthClass="w-80" video_name={"videoQuizTest1.mp4"} />
-        </section>
-        <section>
-          <HotspotQuiz config={hotspotQuizConfig1}/>
-        </section>
-        <section>
-          <VideoQuiz config={videoQuizConfig1}/>
-        </section>
-        <section>
-          <MultipleChoiceQuiz config={multipleChoiceConfig1}/>
-        </section>
-        <section>
-          <DragAndDrop config={dragAndDropConfig1}/>
-        </section>
-        <section>
-          <MultipleChoiceQuiz config={multipleChoiceConfig1} />
-        </section>
-        <section>
-          <VideoPlayer widthClass="w-80" video_name={"videoQuizTest1.mp4"} />
-        </section>
-      </main>
+      <Routes>
+        <Route path="/" element={<Einleitung onFinish={() => toggleChecked("/", "/phishing")} />} />
+        <Route path="/phishing" element={<Phishing onFinish={() => toggleChecked("/phishing", "/socialengineering")} />} />
+        <Route path="/socialengineering" element={<SocialEngineering onFinish={() => toggleChecked("/socialengineering", "/onlineshopping")} />} />
+        <Route path="/onlineshopping" element={<OnlineShopping onFinish={() => toggleChecked("/onlineshopping", "/kibetrug")} />} />
+        <Route path="/kibetrug" element={<KiBetrug onFinish={() => toggleChecked("/kibetrug", "/verhalten")} />} />
+        <Route path="/verhalten" element={<Verhalten onFinish={() => toggleChecked("/verhalten", "/zusammenfassung")} />} />
+        <Route path="/zusammenfassung" element={<Zusammenfassung onFinish={() => toggleChecked("/zusammenfassung")} />} />
+      </Routes>
     </div>
+    </>
   );
 }
 
