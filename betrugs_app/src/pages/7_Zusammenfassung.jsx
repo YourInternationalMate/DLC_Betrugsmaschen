@@ -1,4 +1,4 @@
-import VideoPlayer from "../components/Video/Video.jsx";
+import VideoPlayer from "../components/video/Video.jsx";
 import FinishButton from "../components/finish-btn/FinishButton.jsx";
 
 function Zusammenfassung({ onFinish }) {
