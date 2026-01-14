@@ -1,6 +1,6 @@
 import "./DragAndDrop.scss";
 import { Fragment, useState } from "react";
-import VideoPlayer from "../Video/Video";
+import VideoPlayer from "../video/Video";
 import Instruction from "../quiz-instruction/Instruction";
 
 function DragAndDrop({ config }) {
@@ -78,11 +78,11 @@ function DragAndDrop({ config }) {
               )
             )}
           </p>
+          <button className="submit-btn" onClick={handleClick_check}>
+            ✓
+          </button>
         </div>
       </div>
-      <button className="submit-btn" onClick={handleClick_check}>
-        ✓
-      </button>
     </>
   );
 }

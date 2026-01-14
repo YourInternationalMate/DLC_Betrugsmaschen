@@ -68,6 +68,7 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnde
                 onEnded={onEnded}
                 onPlay={() => setIsPlaying(true)}   // synchronisation damit der play/pause Button sich richtig updated
                 onPause={() => setIsPlaying(false)}
+                onClick={handlePlayPause}
             >
                 Ihr Browser unterstützt das Video-Tag nicht.
             </video>

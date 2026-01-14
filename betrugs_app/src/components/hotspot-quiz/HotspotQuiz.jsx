@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./HotspotQuiz.scss";
 import Instruction from "../quiz-instruction/Instruction";
+import {FaRedo} from "react-icons/fa";
 
 export default function HotspotQuiz( {config}) {
     const [selectedHotspot, setSelectedHotspot] = useState(null);
@@ -64,16 +65,19 @@ export default function HotspotQuiz( {config}) {
                         selectedHotspot.isCorrect ? "correct" : "incorrect"
                     }`}
                 >
-                    <p>{selectedHotspot.explanation || "Kein Fehler – dieser Bereich ist korrekt."}</p>
+                    <p className={`explanation ${selectedHotspot.isCorrect ? "correct" : "incorrect"}`}>
+                        {selectedHotspot.explanation || "Kein Fehler – dieser Bereich ist korrekt."}
+                    </p>
                 </div>
             )}
 
             {allCorrectClicked && (
-                <div className="finished-container">
-                    <p className="success-message">Du hast alle Hotspots gefunden. Gut gemacht!</p>
+                <div className="submit-container">
+                    <p className="success-message">Du hast alle Hotspots gefunden.</p>
                     <div className="button-row">
-                        <button className="restart-btn" onClick={handleRestart}>Quiz wiederholen</button>
-                        <button className="next-btn">Weiter</button>
+                        <button className="submit-btn" onClick={handleRestart}>
+                            <FaRedo />
+                        </button>
                     </div>
                 </div>
             )}

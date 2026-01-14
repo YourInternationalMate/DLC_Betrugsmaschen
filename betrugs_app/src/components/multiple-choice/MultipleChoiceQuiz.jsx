@@ -3,7 +3,7 @@ import "./MultipleChoiceQuiz.css";
 import RadioButton2 from "../radio-buttons/RadioButton-2";
 import RadioButton3 from "../radio-buttons/RadioButton-3";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
-import VideoPlayer from "../Video/Video";
+import VideoPlayer from "../video/Video";
 import Instruction from "../quiz-instruction/Instruction.jsx";
 
 function MultipleChoiceQuiz({ config }) {

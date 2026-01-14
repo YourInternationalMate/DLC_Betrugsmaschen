@@ -1,8 +1,9 @@
 import { useState } from "react";
-import VideoPlayer from "../Video/Video.jsx";
+import VideoPlayer from "../video/Video.jsx";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
 import Instruction from "../quiz-instruction/Instruction";
 import "./VideoQuiz.scss";
+import {FaRedo} from "react-icons/fa";
 
 export default function VideoQuiz( {config}) {
     const [currentSegment, setCurrentSegment] = useState("intro");
@@ -100,11 +101,12 @@ export default function VideoQuiz( {config}) {
                         </p>
 
                         {isNextQuizDone ? (
-                            <div className="finished-container">
-                                <p className="success-message">Du hast alle Fragen beantwortet. Gut gemacht!</p>
+                            <div className="submit-container">
+                                <p className="success-message">Du hast alle Fragen beantwortet.</p>
                                 <div className="button-row">
-                                    <button className="restart-btn" onClick={handleRestart}>Quiz wiederholen</button>
-                                    <button className="next-btn">WeiterTest</button>
+                                    <button className="submit-btn" onClick={handleRestart}>
+                                        <FaRedo />
+                                    </button>
                                 </div>
                             </div>
                         ) : (

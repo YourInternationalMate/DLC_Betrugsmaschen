@@ -6,7 +6,7 @@ import hotspotQuizConfig1 from "./data/configs/hotspotQuiz/HotspotQuizConfig1.js
 import videoQuizConfig1 from "./data/configs/videoQuiz/VideoQuizConfig1.json"
 import dragAndDropConfig1 from "./data/configs/dragAndDrop/DragAndDropConfig1.json";
 import multipleChoiceConfig1 from "./data/configs/multipleChoice/MultipleChoiceConfig1.json";
-import VideoPlayer from "./components/Video/Video.jsx";
+import VideoPlayer from "./components/video/Video.jsx";
 import MultipleChoiceQuiz from "./components/multiple-choice/MultipleChoiceQuiz.jsx";
 
 function App() {
