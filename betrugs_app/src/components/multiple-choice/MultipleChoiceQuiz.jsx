@@ -3,7 +3,7 @@ import "./MultipleChoiceQuiz.css";
 import RadioButton2 from "../radio-buttons/RadioButton-2";
 import RadioButton3 from "../radio-buttons/RadioButton-3";
 import RadioButton4 from "../radio-buttons/RadioButton-4";
-import VideoPlayer from "../Video/Video";
+import VideoPlayer from "../video/Video";
 import Instruction from "../quiz-instruction/Instruction.jsx";
 
 function MultipleChoiceQuiz({ config }) {
@@ -122,22 +122,22 @@ function MultipleChoiceQuiz({ config }) {
   return (
     <>
       {videoName && (
-        <VideoPlayer widthClass="w-80" video_name={videoName} subtitle_name={subtitleName} />
+        <VideoPlayer video_name={videoName} subtitle_name={subtitleName} />
       )}
       
       <Instruction quizType="multipleChoiceQuiz" />
       
-      <h3 className="quiz-question">{question}</h3>
       <div className="radio-btn-container">
-        {content}
-        {feedback && feedback.status !== "warning" && (
-          <p className={`quiz-feedback ${feedback.status}`}>
-            {feedback.message}
-          </p>
-        )}
-        {feedback?.status === "warning" && (
-          <p className="quiz-feedback warning">{feedback.message}</p>
-        )}
+        <h3 className="quiz-question">{question}</h3>
+          {content}
+          {feedback && feedback.status !== "warning" && (
+            <p className={`quiz-feedback ${feedback.status}`}>
+              {feedback.message}
+            </p>
+          )}
+          {feedback?.status === "warning" && (
+            <p className="quiz-feedback warning">{feedback.message}</p>
+          )}
       </div>
     </>
   );

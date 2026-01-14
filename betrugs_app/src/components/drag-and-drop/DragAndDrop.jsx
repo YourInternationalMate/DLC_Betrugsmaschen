@@ -1,6 +1,6 @@
 import "./DragAndDrop.scss";
 import { Fragment, useState } from "react";
-import VideoPlayer from "../Video/Video";
+import VideoPlayer from "../video/Video";
 import Instruction from "../quiz-instruction/Instruction";
 
 function DragAndDrop({ config }) {
@@ -46,7 +46,7 @@ function DragAndDrop({ config }) {
 
   return (
     <>
-      <VideoPlayer widthClass="w-80" video_name={videoName} subtitle_name={subtitleName}/>
+      <VideoPlayer video_name={videoName} subtitle_name={subtitleName}/>
       <Instruction quizType="dragAndDropQuiz" />
       <div className="dnd-container">
         <div className="dnd-btn-row">
@@ -78,11 +78,11 @@ function DragAndDrop({ config }) {
               )
             )}
           </p>
+          <button className="submit-btn" onClick={handleClick_check}>
+            ✓
+          </button>
         </div>
       </div>
-      <button className="submit-btn" onClick={handleClick_check}>
-        ✓
-      </button>
     </>
   );
 }
