@@ -15,10 +15,11 @@ function DragAndDrop({ config }) {
   } = config;
 
   const [selectedWords, setSelectedWords] = useState(defaultWords);
-
   const [selectedWord, setSelectedWord] = useState(null);
+  const [feedback, setFeedback] = useState(null);
 
   const handleClick_Input = ({ target: { name } }, selectedWord) => {
+    setFeedback(null);
     if (selectedWord === null) {
       setSelectedWords((prev) => ({ ...prev, [name]: defaultWords[name] }));
       return;
@@ -29,14 +30,37 @@ function DragAndDrop({ config }) {
   };
 
   const handleClick_check = () => {
-    const isCorrect = Object.keys(correctWords).every(
-      (key) => selectedWords[key] === correctWords[key]
-    );
-    console.log(isCorrect ? "PASST SO" : "PASST NICHT");
+    const slots = Object.keys(correctWords);
+
+    const hasMissing = slots.some((slot) => {
+      const currentWord = selectedWords[slot];
+      const defaultWord = defaultWords[slot];
+      const correctWord = correctWords[slot];
+
+      return currentWord === defaultWord && correctWord !== defaultWord;
+    });
+
+    if (hasMissing) {
+      setFeedback({
+        status: "warning",
+        message: "Bitte fülle alle Lücken aus.",
+      });
+      return;
+    }
+
+    const isCorrect = slots.every((key) => selectedWords[key] === correctWords[key]);
+
+    setFeedback({
+      status: isCorrect ? "correct" : "incorrect",
+      message: isCorrect
+        ? "Richtige Antwort!"
+        : "Leider falsch. Schau dir die Hinweise an.",
+    });
   };
 
   const handleClick_selection = (value) => {
     setSelectedWord(value);
+    setFeedback(null);
   };
 
   const isWordAssigned = (value) =>
@@ -81,6 +105,14 @@ function DragAndDrop({ config }) {
           <button className="submit-btn" onClick={handleClick_check}>
             ✓
           </button>
+          {feedback && feedback.status !== "warning" && (
+            <p className={`quiz-feedback ${feedback.status}`}>
+              {feedback.message}
+            </p>
+          )}
+          {feedback?.status === "warning" && (
+            <p className="quiz-feedback warning">{feedback.message}</p>
+          )}
         </div>
       </div>
     </>
