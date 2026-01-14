@@ -9,7 +9,7 @@ function Einleitung({ onFinish }) {
         <br />
         IM INTERNET.
       </h1>
-      <VideoPlayer widthClass="w-80" video_name={"videoQuizTest1.mp4"} />
+      <VideoPlayer video_name={"videoQuizTest1.mp4"} />
       <FinishButton onFinish={onFinish} />
     </main>
   );
