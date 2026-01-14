@@ -5,7 +5,7 @@ import FinishButton from "../components/finish-btn/FinishButton.jsx";
 function Phishing({ onFinish }) {
   return (
     <main>
-        <HotspotQuiz config={hotspotQuizConfig1}/>#
+        <HotspotQuiz config={hotspotQuizConfig1}/>
         <FinishButton onFinish={onFinish}/>
     </main>
 );
