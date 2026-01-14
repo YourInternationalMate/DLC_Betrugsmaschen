@@ -40,7 +40,7 @@ function App() {
         <Route path="/onlineshopping" element={<OnlineShopping onFinish={() => toggleChecked("/onlineshopping", "/kibetrug")} />} />
         <Route path="/kibetrug" element={<KiBetrug onFinish={() => toggleChecked("/kibetrug", "/verhalten")} />} />
         <Route path="/verhalten" element={<Verhalten onFinish={() => toggleChecked("/verhalten", "/zusammenfassung")} />} />
-        <Route path="/zusammenfassung" element={<Zusammenfassung onFinish={() => toggleChecked("/zusammenfassung")} />} />
+        <Route path="/zusammenfassung" element={<Zusammenfassung onFinish={() => toggleChecked("/zusammenfassung", "/zusammenfassung")} />} />
       </Routes>
     </div>
     </>
