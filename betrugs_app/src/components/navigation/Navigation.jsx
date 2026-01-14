@@ -6,14 +6,10 @@ import "./Navigation.css";
 
 import NavigationElement from "../navigation-element/NavigationElement";
 
-function Navigation() {
+function Navigation({ items }) {
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
-  const [items, setItems] = useState([
-    { to: "#einfuehrung", label: "Einführung", checked: true },
-    { to: "#test", label: "Test", checked: false },
-  ]); // TODO: richtige Kapitel einsetzen und checked als False setzen
-
+  
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
@@ -22,19 +18,11 @@ function Navigation() {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  const toggleChecked = (to) => {
-    // TODO: muss nach Abschluss getoggled werden (einfach Kapitel ID übergeben "#test")
-    setItems((prev) =>
-      prev.map((item) => (item.to === to ? { ...item, checked: true } : item))
-    );
-  };
-
   return (
-    <div className="container">
+    <div className="navigation-container">
       <IconButton edge="start" onClick={() => setOpen(true)} aria-label="Menu">
         <MenuIcon className="menuicon" />
       </IconButton>
-
       <Drawer
         anchor="left"
         open={open}
@@ -45,7 +33,7 @@ function Navigation() {
           sx={{ display: "flex", flexDirection: "column", height: "100%" }}
           onClick={() => setOpen(false)}
         >
-          <List sx={{ flexGrow: 1, width: 200 }}>
+          <List sx={{ flexGrow: 1, width: 350 }}>
             {items.map((item) => (
               <NavigationElement key={item.to} {...item} />
             ))}
