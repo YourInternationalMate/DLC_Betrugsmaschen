@@ -46,6 +46,22 @@
     color: var(--btn-disabled);
 }
 
+.quiz-feedback {
+  margin-left: 10%;
+}
+
+.quiz-feedback.correct {
+  color: var(--correct);
+}
+
+.quiz-feedback.incorrect {
+  color: var(--incorrect);
+}
+
+.quiz-feedback.warning {
+  color: var(--warning);
+}
+
 @media (max-width: 620px) {
   .dnd-container {
     width: 100%;
