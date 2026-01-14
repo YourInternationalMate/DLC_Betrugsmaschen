@@ -10,22 +10,49 @@ import KiBetrug from "./pages/5_KiBetrug.jsx";
 import Verhalten from "./pages/6_Verhalten.jsx";
 import Zusammenfassung from "./pages/7_Zusammenfassung.jsx";
 
+const COUNTER_KEY = "progress-count";
+const ITEM_PREFIX = "progress";
+const BASE_ITEMS = [
+  { to: "/", label: "Einleitung", checked: false },
+  { to: "/phishing", label: "Phishing", checked: false },
+  { to: "/socialengineering", label: "Social Engineering", checked: false },
+  { to: "/onlineshopping", label: "Online Shopping", checked: false },
+  { to: "/kibetrug", label: "KI-Betrug", checked: false },
+  { to: "/verhalten", label: "Verhalten", checked: false },
+  { to: "/zusammenfassung", label: "Zusammenfassung", checked: false },
+];
+
+const getStoredProgress = () => {
+  const count = Number(localStorage.getItem(COUNTER_KEY) || 0);
+  return Array.from({ length: count }, (_, i) =>
+    localStorage.getItem(`${ITEM_PREFIX}-${i + 1}`)
+  ).filter(Boolean);
+};
+
 function App() {
   const navigate = useNavigate();
-  const [items, setItems] = useState([
-      { to: "/", label: "Einleitung", checked: false },
-      { to: "/phishing", label: "Phishing", checked: false },
-      { to: "/socialengineering", label: "Social Engineering", checked: false },
-      { to: "/onlineshopping", label: "Online Shopping", checked: false },
-      { to: "/kibetrug", label: "KI-Betrug", checked: false },
-      { to: "/verhalten", label: "Verhalten", checked: false },
-      { to: "/zusammenfassung", label: "Zusammenfassung", checked: false },
-    ]);
+  const stored = getStoredProgress();
+  const [items, setItems] = useState(
+    BASE_ITEMS.map((item) =>
+      stored.includes(item.to) ? { ...item, checked: true } : item
+    )
+  );
 
   const toggleChecked = (to, path) => {
     setItems((prev) =>
       prev.map((item) => (item.to === to ? { ...item, checked: true } : item))
     );
+
+    const storedProgress = getStoredProgress();
+    const count = Number(localStorage.getItem(COUNTER_KEY) || 0);
+    const alreadyStored = storedProgress.includes(to);
+
+    if (!alreadyStored && count < 7) {
+      const next = count + 1;
+      localStorage.setItem(`${ITEM_PREFIX}-${next}`, to);
+      localStorage.setItem(COUNTER_KEY, String(next));
+    }
+
     navigate(path);
   };
 
