@@ -1,8 +1,8 @@
 import "./FinishButton.css";
 
-function FinishButton({ onFinish }) {
+function FinishButton({ onFinish, text = "Weiter" }) {
   return (
-    <button className="finish-btn" onClick={onFinish}>Weiter</button>
+    <button className="finish-btn" onClick={onFinish}>{ text }</button>
 );
 }
 
