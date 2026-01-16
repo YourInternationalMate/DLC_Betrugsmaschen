@@ -1,14 +1,24 @@
 import HotspotQuiz from "../components/hotspot-quiz/HotspotQuiz.jsx";
-import hotspotQuizConfig1 from "../data/configs/hotspotQuiz/HotspotQuizConfig1.json"
+import hotspotQuizConfig1 from "../data/configs/hotspotQuiz/HotspotQuizConfig1.json";
 import FinishButton from "../components/finish-btn/FinishButton.jsx";
+import { useEffect } from "react";
 
 function Phishing({ onFinish }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main>
-        <HotspotQuiz config={hotspotQuizConfig1}/>
-        <FinishButton onFinish={onFinish}/>
+      <h1>
+        BETRUGSMASCHEN
+        <br />
+        IM INTERNET.
+      </h1>
+      <HotspotQuiz config={hotspotQuizConfig1} />
+      <FinishButton onFinish={onFinish} />
     </main>
-);
+  );
 }
 
 export default Phishing;
