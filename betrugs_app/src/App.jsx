@@ -70,6 +70,7 @@ function App() {
         <Route path="/zusammenfassung" element={<Zusammenfassung onFinish={() => toggleChecked("/zusammenfassung", "/zusammenfassung")} />} />
       </Routes>
     </div>
+    <footer>test</footer>
     </>
   );
 }
