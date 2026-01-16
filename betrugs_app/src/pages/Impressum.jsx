@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function Impressum() {
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -42,9 +42,9 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--txt-color);
-  color: var(--bg-color);
-  height: 10vh;
+  justify-content: center;
+  background-color: var(--footer);
+  height: 5vh;
   padding: 10px;
 }
 
@@ -139,6 +139,7 @@ footer {
 [data-theme="dark"] {
   --bg-color: #202020;
   --txt-color: #f3f3f3;
+  --footer: #161616;
   --btn-disabled: #6f6f6f;
   --correct: #2e9f35;
   --incorrect: #c54b4b;
@@ -148,6 +149,7 @@ footer {
 [data-theme="light"] {
   --bg-color: #f3f3f3;
   --txt-color: #202020;
+  --footer: #202020;
   --btn-disabled: #6f6f6f;
   --correct: #1b5e20;
   --incorrect: #b71c1c;
