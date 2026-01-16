@@ -129,7 +129,8 @@ function App() {
           </Routes>
         </div>
         <footer>
-          <button className="impressum-btn" onClick={() => navigate("/impressum")}>- Impressum -</button>
+          <button className="footer-btn" onClick={() => navigate("https://dlc.sh/")}>DLC Modul Betrugsmaschen</button>
+          <button className="footer-btn" onClick={() => navigate("/impressum")}>Impressum</button>
         </footer>
       </div>
     </>

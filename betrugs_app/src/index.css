@@ -38,16 +38,6 @@ a {
   text-align: center;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--footer);
-  height: 5vh;
-  padding: 10px;
-}
-
 .submit-btn {
   background-color: var(--txt-color);
   color: var(--bg-color);

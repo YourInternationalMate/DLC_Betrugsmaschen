@@ -23,13 +23,21 @@ main {
 }
 
 footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--footer);
+  height: 5vh;
+  padding: 10px 20px 10px 20px;
   margin-top: auto;
 }
 
-.impressum-btn {
+.footer-btn {
   border: 0;
   background-color: #00000000;
   color: #f3f3f3;
-  font-family: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
+  font-family: "Tahoma", Arial, sans-serif;
+  font-weight: normal;
   font-size: 20px;
 }
