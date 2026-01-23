@@ -1,5 +1,11 @@
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .app-shell {
-  margin: 0 5% 5% 5% ;
+  margin: 0 5% 5% 5%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7,11 +13,31 @@
 }
 
 main h1 {
-    margin: 0;
+  margin: 0;
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--footer);
+  height: 5vh;
+  padding: 10px 20px 10px 20px;
+  margin-top: auto;
+}
+
+.footer-btn {
+  border: 0;
+  background-color: #00000000;
+  color: #f3f3f3;
+  font-family: "Tahoma", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
 }
