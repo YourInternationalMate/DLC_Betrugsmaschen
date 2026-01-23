@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { FaPlay, FaPause, FaRedo, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaPlay, FaPause, FaRedo, FaClosedCaptioning } from "react-icons/fa";
 import "./Video.scss";
 import subtitleObj from '../../data/VideoSubtitles.json';
 
@@ -75,10 +75,10 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnde
 
             <div className="video-controls">
                 <button className="btn-play" onClick={handlePlayPause}>
-                    {isPlaying ? <FaPause /> : <FaPlay />}
+                    {isPlaying ? <FaPause size={"20px"} /> : <FaPlay size={"20px"} />}
                 </button>
                 <button className="btn-restart" onClick={handleRestart}>
-                    <FaRedo />
+                    <FaRedo size={"20px"} />
                 </button>
 
                 <input
@@ -106,7 +106,7 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnde
                     title="Untertitel ein-/ausblenden"
                     onClick={() => setIsSubtitleOpen(!isSubtitleOpen)}
                 >
-                    {isSubtitleOpen ? <FaChevronUp /> : <FaChevronDown />}
+                    <FaClosedCaptioning size={"30px"} />
                 </button>
                 </div>
 

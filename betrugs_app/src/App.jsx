@@ -14,13 +14,13 @@ import Impressum from "./pages/Impressum.jsx";
 const COUNTER_KEY = "progress-count";
 const ITEM_PREFIX = "progress";
 const BASE_ITEMS = [
-  { to: "/", label: "Einleitung", checked: false },
-  { to: "/phishing", label: "Phishing", checked: false },
-  { to: "/socialengineering", label: "Social Engineering", checked: false },
-  { to: "/onlineshopping", label: "Online Shopping", checked: false },
-  { to: "/kibetrug", label: "KI-Betrug", checked: false },
-  { to: "/verhalten", label: "Verhalten", checked: false },
-  { to: "/zusammenfassung", label: "Zusammenfassung", checked: false },
+  { to: "/", label: "Kapitel 1", checked: false },
+  { to: "/phishing", label: "Kapitel 2", checked: false },
+  { to: "/socialengineering", label: "Kapitel 3", checked: false },
+  { to: "/onlineshopping", label: "Kapitel 4", checked: false },
+  { to: "/kibetrug", label: "Kapitel 5", checked: false },
+  { to: "/verhalten", label: "Kapitel 6", checked: false },
+  { to: "/zusammenfassung", label: "Kapitel 7", checked: false },
 ];
 
 const getStoredProgress = () => {
