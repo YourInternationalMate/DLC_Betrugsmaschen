@@ -2,23 +2,74 @@
   "videoName": "test_Video.mp4",
   "subtitleName": "subtitle_Video1",
   "wordOptions": [
-    { "label": "Hallo", "value": "Hallo" },
-    { "label": "Ciao", "value": "Ciao" },
-    { "label": "Test", "value": "Test" }
+    {
+      "label": "VoiceCloning",
+      "value": "Voice-Cloning"
+    },
+    {
+      "label": "DeepLearning",
+      "value": "Deep Learning"
+    },
+    {
+      "label": "Deepfakes",
+      "value": "Deepfakes"
+    },
+    {
+      "label": "SpamFilter",
+      "value": "Spam Filter"
+    },
+    {
+      "label": "PhishingEmail",
+      "value": "Phishing Email"
+    },
+    {
+      "label": "Kryptowaehrung",
+      "value": "Kryptowährung"
+    },
+    {
+      "label": "Blockchain",
+      "value": "Blockchain"
+    }
   ],
   "defaultWords": {
-    "test": "test",
-    "test1": "test1"
+    "slot1": "____",
+    "slot2": "____",
+    "slot3": "____",
+    "slot4": "____"
   },
   "correctWords": {
-    "test": "Ciao",
-    "test1": "Hallo"
+    "slot1": "Deepfakes",
+    "slot2": "Voice-Cloning",
+    "slot3": "Phishing Email",
+    "slot4": "Deep Learning"
+  },
+  "correctWordsExplanation": {
+    "slot1": {
+      "term": "Deepfakes",
+      "text": "Gefälschte Videos, bei denen KI Gesichter überträgt oder Personen Worte sprechen lässt, die sie nie gesagt haben."
+    },
+    "slot2": {
+      "term": "Voice-Cloning",
+      "text": "Das Klonen von Stimmen mittels KI. Bereits 3-10 Sekunden Originalaufnahme reichen aus, um eine Stimme perfekt zu kopieren."
+    },
+    "slot3": {
+      "term": "Phishing-Mails",
+      "text": "KI-generierte E-Mails sind heute fehlerfrei und professionell. Über 60% aller Phishing-Angriffe nutzen KI-Texte."
+    },
+    "slot4": {
+      "term": "Deep Learning",
+      "text": "Die Technologie hinter KI-Betrug. Die KI lernt aus Millionen Beispielen und imitiert menschliches Verhalten täuschend echt."
+    }
   },
   "paragraphParts": [
-    "Lorem ipsum dolor sit ",
-    { "slot": "test" },
-    ", consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit ",
-    { "slot": "test1" },
-    ", consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+    "KI-generierte Betrugsversuche nutzen künstliche Intelligenz, um täuschend echte Inhalte zu erstellen. Bei ",
+    { "slot": "slot1" },
+    " werden Videos erstellt, in denen Personen Dinge sagen oder tun, die sie nie getan haben. Mit ",
+    { "slot": "slot2" },
+    " können Betrüger die Stimme einer echten Person mit nur wenigen Sekunden Originalaufnahme perfekt kopieren. KI-Sprachmodelle wie ChatGPT werden genutzt, um fehlerfreie und professionelle ",
+    { "slot": "slot3" },
+    " zu schreiben, die kaum noch von echten Nachrichten zu unterscheiden sind. Die Technologie dahinter heißt ",
+    { "slot": "slot4" },
+    " und lernt aus Millionen von Beispielen, wie Menschen aussehen, sprechen und schreiben."
   ]
 }

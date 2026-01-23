@@ -10,11 +10,19 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slot-explanation {
+  text-align: left;
+  text-align-last: left;
 }
 
 .dnd-txt {
   text-align: center;
   width: 100%;
+  margin: 0;
 }
 
 .dnd-btn-txt {
@@ -23,8 +31,6 @@
   font-family: 'Tahoma', Arial, sans-serif;
   font-weight: bold;
   font-size: 20px;
-  text-decoration: underline;
-  text-underline-offset: 5px;
   border: 0;
 }
 
@@ -37,17 +43,31 @@
   border: var(--txt-color) solid 2px;
 }
 
+.dnd-btn.selected {
+  border-width: 3px;
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+}
+
+
+.dnd-btn-txt.wrong {
+  color: var(--incorrect);
+  font-weight: bold;
+}
+
+
 .dnd-btn:disabled {
-    color: var(--btn-disabled);
-    border: var(--btn-disabled) solid 3px;
+  color: var(--btn-disabled);
+  border: var(--btn-disabled) solid 3px;
 }
 
 .dnd-btn:active {
-    color: var(--btn-disabled);
+  color: var(--btn-disabled);
 }
 
 .quiz-feedback {
-  margin-left: 10%;
+  margin: 0 auto 10px auto;
+  width: fit-content;
 }
 
 .quiz-feedback.correct {
