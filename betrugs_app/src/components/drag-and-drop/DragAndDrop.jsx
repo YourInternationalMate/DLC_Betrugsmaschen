@@ -76,12 +76,12 @@ function DragAndDrop({ config }) {
         <div className="dnd-btn-row">
           {wordOptions.map(({ label, value }) => (
             <button
-              key={value}
+              key={label}
               className="dnd-btn"
               disabled={isWordAssigned(value)}
               onClick={() => handleClick_selection(value)}
             >
-              {label}
+              {value}
             </button>
           ))}
         </div>
