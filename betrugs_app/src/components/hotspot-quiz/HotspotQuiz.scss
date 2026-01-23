@@ -28,7 +28,7 @@
 }
 
 .submit-container {
-  margin-left:10%;
+  margin-left: 10%;
 }
 
 .hotspot.correct {
@@ -42,8 +42,7 @@
 .explanation-box {
   padding: 5px;
   margin-left: 10%;
-  gap: 5px
-
+  gap: 5px;
 }
 
 .explanation.correct {
@@ -52,6 +51,10 @@
 
 .explanation.incorrect {
   color: var(--incorrect);
+}
+
+.submit-btn {
+  margin-left: 0;
 }
 
 @media (max-width: 620px) {
