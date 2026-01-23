@@ -17,16 +17,18 @@ function DragAndDrop({ config }) {
   const [selectedWords, setSelectedWords] = useState(defaultWords);
   const [selectedWord, setSelectedWord] = useState(null);
   const [feedback, setFeedback] = useState(null);
+  const [wrongSlots, setWrongSlots] = useState([]);
 
   const handleClick_Input = ({ target: { name } }, selectedWord) => {
     setFeedback(null);
     if (selectedWord === null) {
       setSelectedWords((prev) => ({ ...prev, [name]: defaultWords[name] }));
-      return;
     } else {
       setSelectedWords((prev) => ({ ...prev, [name]: selectedWord }));
       setSelectedWord(null);
     }
+
+    setWrongSlots((prev) => prev.filter((slot) => slot !== name));
   };
 
   const handleClick_check = () => {
@@ -45,8 +47,14 @@ function DragAndDrop({ config }) {
         status: "warning",
         message: "Bitte fülle alle Lücken aus.",
       });
+      setWrongSlots([]);
       return;
     }
+
+    const wrong = slots.filter(
+        (slot) => selectedWords[slot] !== correctWords[slot]
+    );
+    setWrongSlots(wrong);
 
     const isCorrect = slots.every((key) => selectedWords[key] === correctWords[key]);
 
@@ -54,7 +62,7 @@ function DragAndDrop({ config }) {
       status: isCorrect ? "correct" : "incorrect",
       message: isCorrect
         ? "Richtige Antwort!"
-        : "Leider falsch. Schau dir die Hinweise an.",
+        : "Noch nicht ganz richtig.",
     });
   };
 
@@ -77,7 +85,7 @@ function DragAndDrop({ config }) {
           {wordOptions.map(({ label, value }) => (
             <button
               key={label}
-              className="dnd-btn"
+              className={`dnd-btn ${selectedWord === value ? "selected" : ""}`}
               disabled={isWordAssigned(value)}
               onClick={() => handleClick_selection(value)}
             >
@@ -93,7 +101,7 @@ function DragAndDrop({ config }) {
               ) : (
                 <button
                   key={`slot-${part.slot}-${index}`}
-                  className="dnd-btn-txt"
+                  className={`dnd-btn-txt ${wrongSlots.includes(part.slot) ? "wrong" : ""}`}
                   name={part.slot}
                   onClick={(event) => handleClick_Input(event, selectedWord)}
                 >
@@ -102,17 +110,17 @@ function DragAndDrop({ config }) {
               )
             )}
           </p>
+          {feedback && feedback.status !== "warning" && (
+              <p className={`quiz-feedback ${feedback.status}`}>
+                {feedback.message}
+              </p>
+          )}
+          {feedback?.status === "warning" && (
+              <p className="quiz-feedback warning">{feedback.message}</p>
+          )}
           <button className="submit-btn" onClick={handleClick_check}>
             ✓
           </button>
-          {feedback && feedback.status !== "warning" && (
-            <p className={`quiz-feedback ${feedback.status}`}>
-              {feedback.message}
-            </p>
-          )}
-          {feedback?.status === "warning" && (
-            <p className="quiz-feedback warning">{feedback.message}</p>
-          )}
         </div>
       </div>
     </>
