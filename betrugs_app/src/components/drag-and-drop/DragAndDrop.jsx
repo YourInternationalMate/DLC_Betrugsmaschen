@@ -17,7 +17,8 @@ function DragAndDrop({ config }) {
   const [selectedWords, setSelectedWords] = useState(defaultWords);
   const [selectedWord, setSelectedWord] = useState(null);
   const [feedback, setFeedback] = useState(null);
-  const [wrongSlots, setWrongSlots] = useState([]);
+  const [wrongSlots, setWrongSlots] = useState([])
+  const [showExplanations, setShowExplanations] = useState(false);
 
   const handleClick_Input = ({ target: { name } }, selectedWord) => {
     setFeedback(null);
@@ -48,6 +49,7 @@ function DragAndDrop({ config }) {
         message: "Bitte fülle alle Lücken aus.",
       });
       setWrongSlots([]);
+      setShowExplanations(false);
       return;
     }
 
@@ -57,7 +59,7 @@ function DragAndDrop({ config }) {
     setWrongSlots(wrong);
 
     const isCorrect = slots.every((key) => selectedWords[key] === correctWords[key]);
-
+    setShowExplanations(isCorrect);
     setFeedback({
       status: isCorrect ? "correct" : "incorrect",
       message: isCorrect
@@ -121,6 +123,15 @@ function DragAndDrop({ config }) {
           <button className="submit-btn" onClick={handleClick_check}>
             ✓
           </button>
+          {showExplanations && (
+              <div className="explanations">
+                {Object.values(config.correctWordsExplanation).map(({ term, text }, index) => (
+                    <p key={index} className="slot-explanation">
+                      <strong>{term}:</strong> {text}
+                    </p>
+                ))}
+              </div>
+          )}
         </div>
       </div>
     </>

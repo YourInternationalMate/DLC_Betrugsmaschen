@@ -2,13 +2,34 @@
   "videoName": "test_Video.mp4",
   "subtitleName": "subtitle_Video1",
   "wordOptions": [
-    { "label": "VoiceCloning", "value": "Voice-Cloning" },
-    { "label": "DeepLearning", "value": "Deep Learning" },
-    { "label": "Deepfakes", "value": "Deepfakes" },
-    { "label": "SpamFilter", "value": "Spam Filter" },
-    { "label": "PhishingEmail", "value": "Phishing Email" },
-    { "label": "Kryptowaehrung", "value": "Kryptowährung" },
-    { "label": "Blockchain", "value": "Blockchain" }
+    {
+      "label": "VoiceCloning",
+      "value": "Voice-Cloning"
+    },
+    {
+      "label": "DeepLearning",
+      "value": "Deep Learning"
+    },
+    {
+      "label": "Deepfakes",
+      "value": "Deepfakes"
+    },
+    {
+      "label": "SpamFilter",
+      "value": "Spam Filter"
+    },
+    {
+      "label": "PhishingEmail",
+      "value": "Phishing Email"
+    },
+    {
+      "label": "Kryptowaehrung",
+      "value": "Kryptowährung"
+    },
+    {
+      "label": "Blockchain",
+      "value": "Blockchain"
+    }
   ],
   "defaultWords": {
     "slot1": "____",
@@ -21,6 +42,24 @@
     "slot2": "Voice-Cloning",
     "slot3": "Phishing Email",
     "slot4": "Deep Learning"
+  },
+  "correctWordsExplanation": {
+    "slot1": {
+      "term": "Deepfakes",
+      "text": "Gefälschte Videos, bei denen KI Gesichter überträgt oder Personen Worte sprechen lässt, die sie nie gesagt haben."
+    },
+    "slot2": {
+      "term": "Voice-Cloning",
+      "text": "Das Klonen von Stimmen mittels KI. Bereits 3-10 Sekunden Originalaufnahme reichen aus, um eine Stimme perfekt zu kopieren."
+    },
+    "slot3": {
+      "term": "Phishing-Mails",
+      "text": "KI-generierte E-Mails sind heute fehlerfrei und professionell. Über 60% aller Phishing-Angriffe nutzen KI-Texte."
+    },
+    "slot4": {
+      "term": "Deep Learning",
+      "text": "Die Technologie hinter KI-Betrug. Die KI lernt aus Millionen Beispielen und imitiert menschliches Verhalten täuschend echt."
+    }
   },
   "paragraphParts": [
     "KI-generierte Betrugsversuche nutzen künstliche Intelligenz, um täuschend echte Inhalte zu erstellen. Bei ",
