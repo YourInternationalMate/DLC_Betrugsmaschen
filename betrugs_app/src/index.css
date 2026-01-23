@@ -1,30 +1,31 @@
 /* Global CSS Settings */
-body, html {
+body,
+html {
   background-color: var(--bg-color);
   margin: 0;
 }
 
 h1 {
   color: var(--txt-color);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 128px;
 }
 
 h2 {
   color: var(--txt-color);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 96px;
 }
 
 h3 {
   color: var(--txt-color);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 30px;
 }
 
 p {
   color: var(--txt-color);
-  font-family: 'Tahoma', Arial, sans-serif;
+  font-family: "Tahoma", Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
   line-height: 1.6;
@@ -33,99 +34,102 @@ p {
 a {
   color: var(--txt-color);
   font-size: 30px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-align: center;
 }
 
 .submit-btn {
-    background-color: var(--txt-color);
-    color: var(--bg-color);
-    width: 100px;
-    height: 41px;
-    border-radius: 20.5px;
-    border: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
-    margin-left: 10%;
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  width: 100px;
+  height: 41px;
+  border-radius: 20.5px;
+  border: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  margin-left: 10%;
 }
 
 .submit-btn:active {
   background-color: var(--btn-disabled);
 }
 
-.restart-btn,.next-btn {
-    background-color: var(--txt-color);
-    color: var(--bg-color);
-    width: 130px;
-    height: 65px;
-    border-radius: 20.5px;
-    border: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
+.restart-btn,
+.next-btn {
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  width: 130px;
+  height: 65px;
+  border-radius: 20.5px;
+  border: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
 }
 
-.restart-btn:active,.next-btn:active {
-    background-color: var(--btn-disabled);
+.restart-btn:active,
+.next-btn:active {
+  background-color: var(--btn-disabled);
 }
 
 @media (max-width: 1050px) {
-    h1 {
-        font-size: 100px;
-    }
+  h1 {
+    font-size: 100px;
+  }
 
-    h2 {
-        font-size: 45px;
-    }
+  h2 {
+    font-size: 45px;
+  }
 
-    h3 {
-        font-size: 25px;
-    }
+  h3 {
+    font-size: 25px;
+  }
 
-    p {
-        font-size: 18px;
-    }
+  p {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 840px) {
-    h1 {
-        font-size: 75px;
-    }
+  h1 {
+    font-size: 75px;
+  }
 
-    h2 {
-        font-size: 35px;
-    }
+  h2 {
+    font-size: 35px;
+  }
 
-    h3 {
-        font-size: 25px;
-    }
+  h3 {
+    font-size: 25px;
+  }
 
-    p {
-        font-size: 17px;
-    }
+  p {
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 620px) {
-    h1 {
-        font-size: 40px;
-    }
+  h1 {
+    font-size: 40px;
+  }
 
-    h2 {
-        font-size: 55px;
-    }
+  h2 {
+    font-size: 55px;
+  }
 
-    h3 {
-        font-size: 25px;
-    }
+  h3 {
+    font-size: 25px;
+  }
 
-    p {
-        font-size: 16px;
-    }
+  p {
+    font-size: 16px;
+  }
 }
 
 /* Themes */
 [data-theme="dark"] {
   --bg-color: #202020;
-  --txt-color: #F3F3F3;
+  --txt-color: #f3f3f3;
+  --footer: #161616;
   --btn-disabled: #6f6f6f;
   --correct: #2e9f35;
   --incorrect: #c54b4b;
@@ -133,8 +137,9 @@ a {
 }
 
 [data-theme="light"] {
-  --bg-color: #F3F3F3;
+  --bg-color: #f3f3f3;
   --txt-color: #202020;
+  --footer: #202020;
   --btn-disabled: #6f6f6f;
   --correct: #1b5e20;
   --incorrect: #b71c1c;

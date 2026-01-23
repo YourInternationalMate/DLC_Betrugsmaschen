@@ -9,6 +9,7 @@ import OnlineShopping from "./pages/4_OnlineShopping.jsx";
 import KiBetrug from "./pages/5_KiBetrug.jsx";
 import Verhalten from "./pages/6_Verhalten.jsx";
 import Zusammenfassung from "./pages/7_Zusammenfassung.jsx";
+import Impressum from "./pages/Impressum.jsx";
 
 const COUNTER_KEY = "progress-count";
 const ITEM_PREFIX = "progress";
@@ -58,18 +59,80 @@ function App() {
 
   return (
     <>
-    <Navigation items={items} />
-    <div className="app-shell">
-      <Routes>
-        <Route path="/" element={<Einleitung onFinish={() => toggleChecked("/", "/phishing")} />} />
-        <Route path="/phishing" element={<Phishing onFinish={() => toggleChecked("/phishing", "/socialengineering")} />} />
-        <Route path="/socialengineering" element={<SocialEngineering onFinish={() => toggleChecked("/socialengineering", "/onlineshopping")} />} />
-        <Route path="/onlineshopping" element={<OnlineShopping onFinish={() => toggleChecked("/onlineshopping", "/kibetrug")} />} />
-        <Route path="/kibetrug" element={<KiBetrug onFinish={() => toggleChecked("/kibetrug", "/verhalten")} />} />
-        <Route path="/verhalten" element={<Verhalten onFinish={() => toggleChecked("/verhalten", "/zusammenfassung")} />} />
-        <Route path="/zusammenfassung" element={<Zusammenfassung onFinish={() => toggleChecked("/zusammenfassung", "/zusammenfassung")} />} />
-      </Routes>
-    </div>
+      <div className="app-root">
+        <Navigation items={items} />
+        <div className="app-shell">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Einleitung onFinish={() => toggleChecked("/", "/phishing")} />
+              }
+            />
+            <Route
+              path="/phishing"
+              element={
+                <Phishing
+                  onFinish={() =>
+                    toggleChecked("/phishing", "/socialengineering")
+                  }
+                />
+              }
+            />
+            <Route
+              path="/socialengineering"
+              element={
+                <SocialEngineering
+                  onFinish={() =>
+                    toggleChecked("/socialengineering", "/onlineshopping")
+                  }
+                />
+              }
+            />
+            <Route
+              path="/onlineshopping"
+              element={
+                <OnlineShopping
+                  onFinish={() => toggleChecked("/onlineshopping", "/kibetrug")}
+                />
+              }
+            />
+            <Route
+              path="/kibetrug"
+              element={
+                <KiBetrug
+                  onFinish={() => toggleChecked("/kibetrug", "/verhalten")}
+                />
+              }
+            />
+            <Route
+              path="/verhalten"
+              element={
+                <Verhalten
+                  onFinish={() =>
+                    toggleChecked("/verhalten", "/zusammenfassung")
+                  }
+                />
+              }
+            />
+            <Route
+              path="/zusammenfassung"
+              element={
+                <Zusammenfassung
+                  onFinish={() =>
+                    toggleChecked("/zusammenfassung", "/zusammenfassung")
+                  }
+                />
+              }
+            />
+            <Route path="/impressum" element={<Impressum />} />
+          </Routes>
+        </div>
+        <footer>
+          <button className="footer-btn" onClick={() => navigate("https://dlc.sh/")}>DLC Modul Betrugsmaschen</button>
+          <button className="footer-btn" onClick={() => navigate("/impressum")}>Impressum</button>
+        </footer>
+      </div>
     </>
   );
 }

@@ -1,18 +1,25 @@
 .finish-btn {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    background-color: var(--txt-color);
-    color: var(--bg-color);
-    width: 100px;
-    height: 41px;
-    border-radius: 20.5px;
-    border: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
-    margin-left: 10%;
+  position: sticky;
+  bottom: 10px;
+  align-self: flex-end;
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  width: 100px;
+  height: 41px;
+  border-radius: 20.5px;
+  border: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
 }
 
 .finish-btn:active {
   background-color: var(--btn-disabled);
+}
+
+@media (max-width: 620px) {
+  .finish-btn {
+    position: fixed;
+    bottom: 9vh;
+    right: 10px;
+  }
 }
