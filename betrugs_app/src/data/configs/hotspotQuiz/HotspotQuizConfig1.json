@@ -2,36 +2,73 @@
   "quiz_meta": {
     "quizId": "HSQ-001",
     "title": "Fehler in einer E-Mail erkennen",
-    "image": "pictures/testBild1.jpg"
+    "image": "pictures/Hotspot-Quiz-W.jpg"
   },
 
   "hotspots": [
     {
       "id": "hs1",
-      "x": 22,
-      "y": 18,
-      "width": 14,
-      "height": 10,
+      "x": 8,
+      "y": 7,
+      "width": 47,
+      "height": 4,
       "isCorrect": true,
-      "explanation": "Die Anrede ist unpassend formuliert."
+      "explanation":
+        "Falsche Domain (amaz0n mit Null, nicht amazon.de) und \"kundservice\" statt \"kundenservice\""
     },
     {
       "id": "hs2",
-      "x": 60,
-      "y": 32,
-      "width": 20,
-      "height": 12,
-      "isCorrect": false,
-      "explanation": "Hier liegt kein offensichtlicher Betrugsversuch vor."
+      "x": 34,
+      "y": 66,
+      "width": 9.5,
+      "height": 3,
+      "isCorrect": true,
+      "explanation": "Doppel-L statt einfach."
     },
     {
-      "id": "hs3",
-      "x": 25,
-      "y": 70,
-      "width": 50,
-      "height": 15,
+      "id": "3",
+      "x": 26.5,
+      "y": 69,
+      "width": 6,
+      "height": 3,
       "isCorrect": true,
-      "explanation": "Dieser Satz enthält grammatikalische Fehler."
+      "explanation": "Fehlendes 'r' (statt \"storniert\")"
+    },
+    {
+      "id": "4",
+      "x": 1.5,
+      "y": 77.3,
+      "width": 47,
+      "height": 4,
+      "isCorrect": true,
+      "explanation": "Fremde Domain (nicht amazon.de) und kein https (keine sichere Verbindung)"
+    },
+    {
+      "id": "5",
+      "x": 32.2,
+      "y": 83.2,
+      "width": 8.5,
+      "height": 3,
+      "isCorrect": true,
+      "explanation": "Fehlendes 'e' (statt \"kontaktieren\")"
+    },
+    {
+      "id": "6",
+      "x": 1.5,
+      "y": 22.7,
+      "width": 18,
+      "height": 4,
+      "isCorrect": true,
+      "explanation": "Amazon kennt normalerweise den Namen"
+    },
+    {
+      "id": "7",
+      "x": 1.5,
+      "y": 69,
+      "width": 17.4,
+      "height": 3,
+      "isCorrect": true,
+      "explanation": "Typische Drucktaktik"
     }
   ]
 }
