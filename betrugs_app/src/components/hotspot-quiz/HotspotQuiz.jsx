@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useRef } from "react";
 import "./HotspotQuiz.scss";
 import Instruction from "../quiz-instruction/Instruction";
 import { FaRedo } from "react-icons/fa";
@@ -7,12 +7,15 @@ export default function HotspotQuiz({ config }) {
   const [selectedHotspot, setSelectedHotspot] = useState(null);
   const [revealedHotspots, setRevealedHotspots] = useState([]);
 
+  const explanationRef = useRef(null);
+
   const handleHotspotClick = (hs) => {
     setSelectedHotspot(hs);
 
     setRevealedHotspots((prev) =>
       prev.includes(hs.id) ? prev : [...prev, hs.id],
     );
+    setTimeout(scrollToExplanation, 50);
   };
 
   const handleRestart = () => {
@@ -23,6 +26,21 @@ export default function HotspotQuiz({ config }) {
   const allCorrectClicked = config.hotspots
     .filter((hs) => hs.isCorrect)
     .every((hs) => revealedHotspots.includes(hs.id));
+
+  const scrollToExplanation = () => {
+    if (!explanationRef.current) return;
+
+    const rect = explanationRef.current.getBoundingClientRect();
+    const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+    if (!isVisible) {
+      explanationRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
 
   return (
     <div className="hotspot-quiz-container">
@@ -58,6 +76,7 @@ export default function HotspotQuiz({ config }) {
 
       {selectedHotspot && (
         <div
+          ref={explanationRef}
           className={`explanation-box ${
             selectedHotspot.isCorrect ? "correct" : "incorrect"
           }`}
