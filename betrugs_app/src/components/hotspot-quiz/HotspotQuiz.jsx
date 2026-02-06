@@ -1,4 +1,4 @@
-import { useState , useRef } from "react";
+import {useState, useRef, useEffect} from "react";
 import "./HotspotQuiz.scss";
 import Instruction from "../quiz-instruction/Instruction";
 import { FaRedo } from "react-icons/fa";
@@ -6,8 +6,24 @@ import { FaRedo } from "react-icons/fa";
 export default function HotspotQuiz({ config }) {
   const [selectedHotspot, setSelectedHotspot] = useState(null);
   const [revealedHotspots, setRevealedHotspots] = useState([]);
+  const [theme, setTheme] = useState(document.documentElement.getAttribute("data-theme") || "light");
 
   const explanationRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      setTheme(currentTheme);
+    });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const currentImage = theme === "dark"
+      ? config.quiz_meta.image.replace("-w.jpg", "-s.jpg")
+      : config.quiz_meta.image;
 
   const handleHotspotClick = (hs) => {
     setSelectedHotspot(hs);
@@ -46,9 +62,9 @@ export default function HotspotQuiz({ config }) {
     <div className="hotspot-quiz-container">
       <div className="image-wrapper">
         <img
-          src={config.quiz_meta.image}
-          alt="Hotspot Quiz"
-          className="quiz-image"
+            src={currentImage}
+            alt="Hotspot Quiz"
+            className="quiz-image"
         />
 
         {config.hotspots.map((hs) => {
