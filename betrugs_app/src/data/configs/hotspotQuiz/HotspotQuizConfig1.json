@@ -4,7 +4,6 @@
     "title": "Fehler in einer E-Mail erkennen",
     "image": "/pictures/Hotspot-Quiz-w.jpg"
   },
-
   "hotspots": [
     {
       "id": "hs1",
@@ -13,29 +12,30 @@
       "width": 47,
       "height": 4,
       "isCorrect": true,
-      "explanation":
-        "Falsche Domain (amaz0n mit Null, nicht amazon.de) und \"kundservice\" statt \"kundenservice\""
+      "explanation": "Falsche Domain (amaz0n mit Null, nicht amazon.de) und \"kundservice\" statt \"kundenservice\""
     },
     {
       "id": "hs2",
+      "groupId": "rechtschreibung",
       "x": 34,
       "y": 66,
       "width": 9.5,
       "height": 3,
       "isCorrect": true,
-      "explanation": "Doppel-L statt einfach."
+      "explanation": "Rechtschreibfehler"
     },
     {
-      "id": "3",
+      "id": "hs3",
+      "groupId": "rechtschreibung",
       "x": 26.5,
       "y": 69,
       "width": 6,
       "height": 3,
       "isCorrect": true,
-      "explanation": "Fehlendes 'r' (statt \"storniert\")"
+      "explanation": "Rechtschreibfehler"
     },
     {
-      "id": "4",
+      "id": "hs4",
       "x": 1.5,
       "y": 77.3,
       "width": 47,
@@ -44,16 +44,17 @@
       "explanation": "Fremde Domain (nicht amazon.de) und kein https (keine sichere Verbindung)"
     },
     {
-      "id": "5",
+      "id": "hs5",
+      "groupId": "rechtschreibung",
       "x": 32.2,
       "y": 83.2,
       "width": 8.5,
       "height": 3,
       "isCorrect": true,
-      "explanation": "Fehlendes 'e' (statt \"kontaktieren\")"
+      "explanation": "Rechtschreibfehler"
     },
     {
-      "id": "6",
+      "id": "hs6",
       "x": 1.5,
       "y": 22.7,
       "width": 18,
@@ -62,10 +63,10 @@
       "explanation": "Amazon kennt normalerweise den Namen"
     },
     {
-      "id": "7",
+      "id": "hs7",
       "x": 1.5,
       "y": 69,
-      "width": 17.4,
+      "width": 17.05,
       "height": 3,
       "isCorrect": true,
       "explanation": "Typische Drucktaktik"
