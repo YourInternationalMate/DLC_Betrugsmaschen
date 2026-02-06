@@ -1,0 +1,59 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: false
+          lfs: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: betrugs_app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: betrugs_app
+        run: npm ci
+
+      - name: Build
+        working-directory: betrugs_app
+        run: npm run build
+
+      - name: Install deploy tools (rsync + ssh)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync openssh-client
+
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Add host to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy via rsync
+        env:
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          USER: ${{ secrets.DEPLOY_USER }}
+          PORT: ${{ secrets.DEPLOY_PORT }}
+        run: |
+          PORT=${PORT:-22}
+          rsync -az --delete \
+            -e "ssh -p $PORT" \
+            ./betrugs_app/build/ \
+            "$USER@$HOST:/var/www/html/"
