@@ -10,11 +10,7 @@ function KiBetrug({ onFinish }) {
 
   return (
     <main>
-      <h1>
-        BETRUGSMASCHEN
-        <br />
-        IM INTERNET.
-      </h1>
+      <h1>KI-FALLEN IM NETZ</h1>
       <DragAndDrop config={dragAndDropConfig1} />
       <FinishButton onFinish={onFinish} />
     </main>

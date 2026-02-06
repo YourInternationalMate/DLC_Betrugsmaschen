@@ -10,11 +10,7 @@ function OnlineShopping({ onFinish }) {
 
   return (
     <main>
-      <h1>
-        BETRUGSMASCHEN
-        <br />
-        IM INTERNET.
-      </h1>
+      <h1>FAKE SHOPS</h1>
       <MultipleChoiceQuiz config={multipleChoiceConfig1} />
       <FinishButton onFinish={onFinish} />
     </main>

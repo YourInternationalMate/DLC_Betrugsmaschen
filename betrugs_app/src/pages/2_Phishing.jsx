@@ -11,9 +11,7 @@ function Phishing({ onFinish }) {
   return (
     <main>
       <h1>
-        BETRUGSMASCHEN
-        <br />
-        IM INTERNET.
+        PHISHING
       </h1>
       <HotspotQuiz config={hotspotQuizConfig1} />
       <FinishButton onFinish={onFinish} />

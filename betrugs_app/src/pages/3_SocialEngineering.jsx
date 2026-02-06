@@ -10,11 +10,7 @@ function SocialEngineering({ onFinish }) {
 
   return (
     <main>
-      <h1>
-        BETRUGSMASCHEN
-        <br />
-        IM INTERNET.
-      </h1>
+      <h1>SOCIAL ENGINEERING</h1>
       <VideoQuiz config={videoQuizConfig1} />
       <FinishButton onFinish={onFinish} />
     </main>

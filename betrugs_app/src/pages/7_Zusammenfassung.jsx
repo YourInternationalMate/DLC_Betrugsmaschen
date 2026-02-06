@@ -10,9 +10,7 @@ function Zusammenfassung({ onFinish }) {
   return (
     <main>
       <h1>
-        BETRUGSMASCHEN
-        <br />
-        IM INTERNET.
+        ZUSAMMENFASSUNG
       </h1>
       <VideoPlayer video_name={"videoQuizTest1.mp4"} />
       <FinishButton onFinish={onFinish} text="Fertig" />
