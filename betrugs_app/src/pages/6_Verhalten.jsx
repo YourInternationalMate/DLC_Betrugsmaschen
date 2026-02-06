@@ -10,11 +10,7 @@ function KiBetrug({ onFinish }) {
 
   return (
     <main>
-      <h1>
-        BETRUGSMASCHEN
-        <br />
-        IM INTERNET.
-      </h1>
+      <h1>VERHALTEN IM BETRUGSFALL</h1>
       <MultipleChoiceQuiz config={multipleChoiceConfig1} />
       <FinishButton onFinish={onFinish} />
     </main>
