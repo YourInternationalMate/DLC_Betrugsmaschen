@@ -13,6 +13,7 @@ import Impressum from "./pages/Impressum.jsx";
 
 const COUNTER_KEY = "progress-count";
 const ITEM_PREFIX = "progress";
+const PASSWORD_LOCK_ENABLED = true;
 const ACCESS_KEY = "site-access-granted";
 const SITE_PASSWORD = "yogJTS90e2ap";
 const MAX_PASSWORD_ATTEMPTS = 3;
@@ -33,10 +34,12 @@ const getStoredProgress = () => {
   ).filter(Boolean);
 };
 
+const isAccessGranted = () => sessionStorage.getItem(ACCESS_KEY) === "true";
+
 function App() {
   const navigate = useNavigate();
   const [hasAccess, setHasAccess] = useState(
-    () => sessionStorage.getItem(ACCESS_KEY) === "true"
+    () => !PASSWORD_LOCK_ENABLED || isAccessGranted()
   );
   const stored = getStoredProgress();
   const [items, setItems] = useState(
@@ -46,6 +49,17 @@ function App() {
   );
 
   useEffect(() => {
+    if (!PASSWORD_LOCK_ENABLED) {
+      return;
+    }
+
+    if (isAccessGranted()) {
+      if (!hasAccess) {
+        setHasAccess(true);
+      }
+      return;
+    }
+
     if (hasAccess) {
       return;
     }
@@ -94,7 +108,7 @@ function App() {
     navigate(path);
   };
 
-  if (!hasAccess) {
+  if (PASSWORD_LOCK_ENABLED && !hasAccess) {
     return null;
   }
 
