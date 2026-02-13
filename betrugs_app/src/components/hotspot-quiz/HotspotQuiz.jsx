@@ -10,6 +10,8 @@ export default function HotspotQuiz({ config }) {
       document.documentElement.getAttribute("data-theme") || "light"
   );
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
+
   const explanationRef = useRef(null);
 
   useEffect(() => {
@@ -26,9 +28,29 @@ export default function HotspotQuiz({ config }) {
     return () => observer.disconnect();
   }, []);
 
-  const currentImage = theme === "dark"
-      ? config.quiz_meta.imageDark || config.quiz_meta.image.replace("-w.jpg", "-s.jpg")
-      : config.quiz_meta.image;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 700);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const currentImage = (() => {
+    if (isMobile) {
+      // Mobile
+      return theme === "dark"
+          ? config.quiz_meta.imageHandyFormat.replace("-w.jpg", "-s.jpg")
+          : config.quiz_meta.imageHandyFormat;
+    } else {
+      // Desktop
+      return theme === "dark"
+          ? config.quiz_meta.image.replace("-w.jpg", "-s.jpg")
+          : config.quiz_meta.image;
+    }
+  })();
+
 
   const handleHotspotClick = (hs) => {
     setSelectedHotspot(hs);
@@ -75,31 +97,40 @@ export default function HotspotQuiz({ config }) {
 
   return (
       <div className="hotspot-quiz-container">
+        <Instruction quizType="hotSpotQuiz" instructionclass="hotspot-instruction-mobile" toggleclass="hotspot-button-mobile" />
         <div className="image-wrapper">
-          <img src={currentImage} alt="Hotspot Quiz" className="quiz-image" />
+          <img
+              src={currentImage}
+              alt="Hotspot Quiz"
+              className="quiz-image"
+          />
 
           {config.hotspots.map((hs) => {
             const isRevealed = revealedHotspots.includes(hs.id);
+
+            const coords = isMobile ? hs.mobile : hs.desktop;
 
             return (
                 <button
                     key={hs.id}
                     className={`hotspot ${
-                        isRevealed ? (hs.isCorrect ? "correct" : "wrong") : "hidden"
+                        isRevealed
+                            ? hs.isCorrect
+                                ? "correct"
+                                : "wrong"
+                            : "hidden"
                     }`}
                     style={{
-                      top: `${hs.y}%`,
-                      left: `${hs.x}%`,
-                      width: `${hs.width}%`,
-                      height: `${hs.height}%`,
+                      top: `${coords.y}%`,
+                      left: `${coords.x}%`,
+                      width: `${coords.width}%`,
+                      height: `${coords.height}%`,
                     }}
                     onClick={() => handleHotspotClick(hs)}
                 />
             );
           })}
         </div>
-
-        <Instruction quizType="hotSpotQuiz" />
 
         {selectedHotspot && (
             <div
@@ -108,15 +139,22 @@ export default function HotspotQuiz({ config }) {
                     selectedHotspot.isCorrect ? "correct" : "incorrect"
                 }`}
             >
-              <p className={`explanation ${selectedHotspot.isCorrect ? "correct" : "incorrect"}`}>
-                {selectedHotspot.explanation || "Kein Fehler – dieser Bereich ist korrekt."}
+              <p
+                  className={`explanation ${
+                      selectedHotspot.isCorrect ? "correct" : "incorrect"
+                  }`}
+              >
+                {selectedHotspot.explanation ||
+                    "Kein Fehler – dieser Bereich ist korrekt."}
               </p>
             </div>
         )}
 
         {allCorrectClicked && (
             <div className="submit-container">
-              <p className="success-message">Du hast alle Hotspots gefunden.</p>
+              <p className="success-message">
+                Du hast alle Hotspots gefunden.
+              </p>
               <button className="submit-btn" onClick={handleRestart}>
                 <FaRedo />
               </button>

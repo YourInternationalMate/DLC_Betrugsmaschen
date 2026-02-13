@@ -52,11 +52,21 @@
   color: var(--incorrect);
 }
 
-@media (max-width: 620px) {
+@media (max-width: 1080px) {
   .image-wrapper {
     width: 100%;
   }
+  .hotspot-instruction-mobile {
+    width: 100% !important;
+  }
 
+  .hotspot-button-mobile {
+    margin-left: 90% !important;
+  }
+
+}
+
+@media (max-width: 620px) {
   .explanation-box {
     margin: 0;
     width: 90%;
