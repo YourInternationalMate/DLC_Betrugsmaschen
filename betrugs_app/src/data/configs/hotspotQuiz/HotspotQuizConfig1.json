@@ -2,74 +2,61 @@
   "quiz_meta": {
     "quizId": "HSQ-001",
     "title": "Fehler in einer E-Mail erkennen",
-    "image": "/pictures/Hotspot-Quiz-w.jpg"
+    "image": "/pictures/Hotspot-Quiz-w.jpg",
+    "imageHandyFormat": "/pictures/Hotspot-Quiz-Smartphone-w.jpg"
   },
   "hotspots": [
     {
       "id": "hs1",
-      "x": 8,
-      "y": 7,
-      "width": 47,
-      "height": 4,
       "isCorrect": true,
-      "explanation": "Falsche Domain (amaz0n mit Null, nicht amazon.de) und \"kundservice\" statt \"kundenservice\""
+      "explanation": "Falsche Domain (amaz0n mit Null, nicht amazon.de) und \"kundservice\" statt \"kundenservice\"",
+      "desktop": { "x": 8, "y": 7, "width": 47, "height": 4 },
+      "mobile": { "x": 14, "y": 8.5, "width": 62, "height": 3 }
     },
     {
       "id": "hs2",
       "groupId": "rechtschreibung",
-      "x": 34,
-      "y": 66,
-      "width": 9.5,
-      "height": 3,
       "isCorrect": true,
-      "explanation": "Rechtschreibfehler"
+      "explanation": "Rechtschreibfehler",
+      "desktop": { "x": 34, "y": 66, "width": 9.5, "height": 3 },
+      "mobile": { "x": 71.5, "y": 56, "width": 20, "height": 3 }
     },
     {
       "id": "hs3",
       "groupId": "rechtschreibung",
-      "x": 26.5,
-      "y": 69,
-      "width": 6,
-      "height": 3,
       "isCorrect": true,
-      "explanation": "Rechtschreibfehler"
+      "explanation": "Rechtschreibfehler",
+      "desktop": { "x": 26.5, "y": 69, "width": 6, "height": 3 },
+      "mobile": { "x": 70.3, "y": 61.5, "width": 13, "height": 3 }
     },
     {
       "id": "hs4",
-      "x": 1.5,
-      "y": 77.3,
-      "width": 47,
-      "height": 4,
       "isCorrect": true,
-      "explanation": "Fremde Domain (nicht amazon.de) und kein https (keine sichere Verbindung)"
+      "explanation": "Fremde Domain (nicht amazon.de) und kein https (keine sichere Verbindung)",
+      "desktop": { "x": 1.5, "y": 77.3, "width": 47, "height": 4 },
+      "mobile": { "x": 2, "y": 68.8, "width": 90, "height": 6 }
     },
     {
       "id": "hs5",
       "groupId": "rechtschreibung",
-      "x": 32.2,
-      "y": 83.2,
-      "width": 8.5,
-      "height": 3,
       "isCorrect": true,
-      "explanation": "Rechtschreibfehler"
+      "explanation": "Rechtschreibfehler",
+      "desktop": { "x": 32.2, "y": 83.2, "width": 8.5, "height": 3 },
+      "mobile": { "x": 67.8, "y": 76.3, "width": 18, "height": 3 }
     },
     {
       "id": "hs6",
-      "x": 1.5,
-      "y": 22.7,
-      "width": 18,
-      "height": 4,
       "isCorrect": true,
-      "explanation": "Amazon kennt normalerweise den Namen"
+      "explanation": "Amazon kennt normalerweise den Namen",
+      "desktop": { "x": 1.5, "y": 22.7, "width": 18, "height": 4 },
+      "mobile": { "x": 2, "y": 16.2, "width": 35, "height": 3 }
     },
     {
       "id": "hs7",
-      "x": 1.5,
-      "y": 69,
-      "width": 17.05,
-      "height": 3,
       "isCorrect": true,
-      "explanation": "Typische Drucktaktik"
+      "explanation": "Typische Drucktaktik",
+      "desktop": { "x": 1.5, "y": 69, "width": 17.05, "height": 3 },
+      "mobile": { "x": 17.5, "y": 61.5, "width": 36, "height": 3 }
     }
   ]
 }
