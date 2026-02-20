@@ -11,7 +11,6 @@ export default function HotspotQuiz({ config }) {
   );
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
-
   const explanationRef = useRef(null);
 
   useEffect(() => {
@@ -38,19 +37,21 @@ export default function HotspotQuiz({ config }) {
   }, []);
 
   const currentImage = (() => {
-    if (isMobile) {
-      // Mobile
-      return theme === "dark"
-          ? config.quiz_meta.imageHandyFormat.replace("-w.jpg", "-s.jpg")
-          : config.quiz_meta.imageHandyFormat;
-    } else {
-      // Desktop
-      return theme === "dark"
-          ? config.quiz_meta.image.replace("-w.jpg", "-s.jpg")
-          : config.quiz_meta.image;
-    }
-  })();
+    const { image, imageHandyFormat } = config.quiz_meta;
 
+    const mobileImage = imageHandyFormat || image;
+    const desktopImage = image;
+
+    const selectedImage = isMobile ? mobileImage : desktopImage;
+
+    if (theme === "dark") {
+      return selectedImage?.includes("-w.jpg")
+          ? selectedImage.replace("-w.jpg", "-s.jpg")
+          : selectedImage;
+    }
+
+    return selectedImage;
+  })();
 
   const handleHotspotClick = (hs) => {
     setSelectedHotspot(hs);
@@ -97,7 +98,12 @@ export default function HotspotQuiz({ config }) {
 
   return (
       <div className="hotspot-quiz-container">
-        <Instruction quizType="hotSpotQuiz" instructionclass="hotspot-instruction-mobile" toggleclass="hotspot-button-mobile" />
+        <Instruction
+            quizType={config.instruction.quizType}
+            instructionclass={config.instruction.instructionClass}
+            toggleclass={config.instruction.toggleClass}
+        />
+
         <div className="image-wrapper">
           <img
               src={currentImage}
@@ -107,9 +113,7 @@ export default function HotspotQuiz({ config }) {
 
           {config.hotspots.map((hs) => {
             const isRevealed = revealedHotspots.includes(hs.id);
-
-            const coords = isMobile ? hs.mobile : hs.desktop;
-
+            const coords = (isMobile && hs.mobile) ? hs.mobile : hs.desktop;
             return (
                 <button
                     key={hs.id}
@@ -152,9 +156,7 @@ export default function HotspotQuiz({ config }) {
 
         {allCorrectClicked && (
             <div className="submit-container">
-              <p className="success-message">
-                Du hast alle Hotspots gefunden.
-              </p>
+              <p className="success-message">Du hast alle Hotspots gefunden.</p>
               <button className="submit-btn" onClick={handleRestart}>
                 <FaRedo />
               </button>

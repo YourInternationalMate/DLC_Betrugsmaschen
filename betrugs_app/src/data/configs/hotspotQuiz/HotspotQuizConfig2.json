@@ -1,0 +1,54 @@
+{
+  "quiz_meta": {
+    "quizId": "HSQ-002",
+    "title": "Betrugsmaschen in einem Fake Shop erkennen",
+    "image": "/pictures/Hotspot-Quiz2.jpg"
+  },
+  "hotspots": [
+    {
+      "id": "hs1",
+      "isCorrect": true,
+      "explanation": "Richtig, der Link ist sehr verdächtig.Die Webseite wird in Russland gehostet,dies ist ein klares Indiz für einen Fake Shop.",
+      "desktop": { "x": 13, "y": 6, "width": 44, "height": 5 }
+    },
+    {
+      "id": "hs2",
+      "isCorrect": true,
+      "explanation": "Das stimmt! Der Rabatt, der nur heute gilt, ist sehr verdächtig.",
+      "desktop": { "x": 45, "y": 53.5, "width": 44, "height": 9 }
+    },
+    {
+      "id": "hs3",
+      "groupId": "kredikarte",
+      "isCorrect": true,
+      "explanation": "Richtig, wenn man nur mit Kreditkarte zahlen kann, ist es ein klares Anzeichen, dass man aufpassen muss.",
+      "desktop": { "x": 47, "y": 93, "width": 26, "height": 7 }
+    },
+    {
+      "id": "hs4",
+      "groupId": "kredikarte",
+      "isCorrect": true,
+      "explanation": "Richtig, wenn man nur mit Kreditkarte zahlen kann, ist es ein klares Anzeichen, dass man aufpassen muss.",
+      "desktop": { "x": 46, "y": 70.5, "width": 50, "height": 8 }
+    },
+    {
+      "id": "hs5",
+      "isCorrect": true,
+      "groupId": "shopname",
+      "explanation": "Das Stimmt, der Name des Shops ist sehr verdächtig.",
+      "desktop": { "x": 4, "y": 12, "width": 30, "height": 10 }
+    },
+    {
+      "id": "hs6",
+      "isCorrect": true,
+      "groupId": "shopname",
+      "explanation": "Das Stimmt, der Name des Shops ist sehr verdächtig.",
+      "desktop": { "x": 38, "y": 22.6, "width": 25, "height": 10 }
+    }
+  ],
+  "instruction": {
+    "quizType": "hotSpotQuiz-Kapitel4",
+    "instructionClass": "hotspot-instruction-mobile",
+    "toggleClass": "hotspot-button-mobile"
+  }
+}
