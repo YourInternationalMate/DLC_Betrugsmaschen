@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "./components/navigation/Navigation";
 import Einleitung from "./pages/1_Einleitung.jsx";
 import Phishing from "./pages/2_Phishing.jsx";
@@ -13,6 +13,10 @@ import Impressum from "./pages/Impressum.jsx";
 
 const COUNTER_KEY = "progress-count";
 const ITEM_PREFIX = "progress";
+const PASSWORD_LOCK_ENABLED = true;
+const ACCESS_KEY = "site-access-granted";
+const SITE_PASSWORD = "yogJTS90e2ap";
+const MAX_PASSWORD_ATTEMPTS = 3;
 const BASE_ITEMS = [
   { to: "/", label: "Kapitel 1", checked: false },
   { to: "/phishing", label: "Kapitel 2", checked: false },
@@ -30,14 +34,61 @@ const getStoredProgress = () => {
   ).filter(Boolean);
 };
 
+const isAccessGranted = () => sessionStorage.getItem(ACCESS_KEY) === "true";
+
 function App() {
   const navigate = useNavigate();
+  const [hasAccess, setHasAccess] = useState(
+    () => !PASSWORD_LOCK_ENABLED || isAccessGranted()
+  );
   const stored = getStoredProgress();
   const [items, setItems] = useState(
     BASE_ITEMS.map((item) =>
       stored.includes(item.to) ? { ...item, checked: true } : item
     )
   );
+
+  useEffect(() => {
+    if (!PASSWORD_LOCK_ENABLED) {
+      return;
+    }
+
+    if (isAccessGranted()) {
+      if (!hasAccess) {
+        setHasAccess(true);
+      }
+      return;
+    }
+
+    if (hasAccess) {
+      return;
+    }
+
+    let attempts = 0;
+    while (attempts < MAX_PASSWORD_ATTEMPTS) {
+      const input = window.prompt(
+        "Diese Website ist gesperrt. Bitte Passwort eingeben:"
+      );
+
+      if (input === SITE_PASSWORD) {
+        sessionStorage.setItem(ACCESS_KEY, "true");
+        setHasAccess(true);
+        return;
+      }
+
+      attempts += 1;
+      if (attempts < MAX_PASSWORD_ATTEMPTS) {
+        window.alert(
+          `Falsches Passwort. Verbleibende Versuche: ${
+            MAX_PASSWORD_ATTEMPTS - attempts
+          }`
+        );
+      }
+    }
+
+    window.alert("Zugriff verweigert.");
+    window.location.replace("about:blank");
+  }, [hasAccess]);
 
   const toggleChecked = (to, path) => {
     setItems((prev) =>
@@ -56,6 +107,10 @@ function App() {
 
     navigate(path);
   };
+
+  if (PASSWORD_LOCK_ENABLED && !hasAccess) {
+    return null;
+  }
 
   return (
     <>

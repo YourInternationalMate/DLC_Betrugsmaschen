@@ -1,3 +1,5 @@
+import multipleChoiceConfig from "../data/configs/multipleChoice/FakeShopMC.json";
+import MultipleChoiceQuiz from "../components/multiple-choice/MultipleChoiceQuiz.jsx";
 import FinishButton from "../components/finish-btn/FinishButton.jsx";
 import { useEffect } from "react";
 import HotspotQuiz from "../components/hotspot-quiz/HotspotQuiz";
@@ -13,6 +15,8 @@ function OnlineShopping({ onFinish }) {
       <h1>FAKE SHOPS</h1>
         <HotspotQuiz config={hotspotQuizConfig2} />
         <FinishButton onFinish={onFinish} />
+      <MultipleChoiceQuiz config={multipleChoiceConfig} />
+      <FinishButton onFinish={onFinish} />
     </main>
   );
 }
