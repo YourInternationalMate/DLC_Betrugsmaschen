@@ -2,7 +2,7 @@ import { useState } from "react";
 import instructionsData from "../../data/QuizInstructions.json";
 import "./Instruction.scss";
 
-export default function Instruction({ quizType }) {
+export default function Instruction({ quizType, toggleclass="", instructionclass="" }) {
     const [isOpen, setIsOpen] = useState(false);
 
     if (!instructionsData[quizType]) {
@@ -13,13 +13,13 @@ export default function Instruction({ quizType }) {
 
     return (
         <div className="instruction-container">
-            <button className="toggle-btn"
+            <button className={`toggle-btn ${toggleclass}`}
                 onClick={() => setIsOpen(prev => !prev)}
             >
                 ?
             </button>
             {isOpen && (
-                <div className="instruction-box">
+                <div className={`instruction-box ${instructionclass}`}>
                     <p>{text}</p>
                 </div>
             )}
