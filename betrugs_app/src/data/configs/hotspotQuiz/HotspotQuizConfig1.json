@@ -58,5 +58,10 @@
       "desktop": { "x": 1.5, "y": 69, "width": 17.05, "height": 3 },
       "mobile": { "x": 17.5, "y": 61.5, "width": 36, "height": 3 }
     }
-  ]
+  ],
+  "instruction": {
+    "quizType": "hotSpotQuiz-Kapitel2",
+    "instructionClass": "hotspot-instruction-mobile",
+    "toggleClass": "hotspot-button-mobile"
+  }
 }

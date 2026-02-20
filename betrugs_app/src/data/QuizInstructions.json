@@ -7,9 +7,13 @@
     "title": "Text Quiz Anleitung",
     "text": "Beantworte die folgenden Fragen auf Basis des bereitgestellten Textmaterials. Jede richtige Antwort bringt dich zum nächsten Abschnitt. Viel Erfolg!"
   },
-  "hotSpotQuiz": {
+  "hotSpotQuiz-Kapitel2": {
     "title": "Hotspot Quiz Anleitung",
-    "text": "Oben siehst du ein Beispiel für eine Phishing E-Mail. Wähle mit der Maus alle Bereiche aus, die für dich darauf hindeuten, dass es sich um eine solche E-Mail handelt. Insgesamt sind in dieser E-Mail 7 Hinweise vorhanden."
+    "text": "Du siehst ein Beispiel für eine Phishing E-Mail. Wähle mit der Maus alle Bereiche aus, die für dich darauf hindeuten, dass es sich um eine solche E-Mail handelt. Insgesamt sind in dieser E-Mail 7 Hinweise vorhanden."
+  },
+  "hotSpotQuiz-Kapitel4": {
+    "title": "Hotspot Quiz Anleitung",
+    "text": "Du siehst ein Beispiel für einen Fake Shop. Wähle mit der Maus alle Bereiche aus, die für dich darauf hindeuten, dass es sich um eine solchen Fake Shop handelt. Insgesamt sind in dieser Abbildung 6 Hinweise vorhanden."
   },
   "dragAndDropQuiz": {
     "title": "Drag and Drop Quiz Anleitung",
