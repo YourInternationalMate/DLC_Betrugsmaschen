@@ -14,7 +14,7 @@ function Einleitung({ onFinish }) {
         <br />
         IM INTERNET.
       </h1>
-      <VideoPlayer video_name={"videoQuizTest1.mp4"} />
+      <VideoPlayer video_name={"einleitung.mov"} subtitle_name={"subtitle_einleitung"}/>
       <FinishButton onFinish={onFinish} />
     </main>
   );
