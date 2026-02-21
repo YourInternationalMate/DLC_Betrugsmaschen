@@ -12,7 +12,7 @@ function Zusammenfassung({ onFinish }) {
       <h1>
         ZUSAMMENFASSUNG
       </h1>
-      <VideoPlayer video_name={"videoQuizTest1.mp4"} />
+      <VideoPlayer video_name="zusammenfassung.mov" subtitle_name="subtitle_zusammenfassung" />
       <FinishButton onFinish={onFinish} text="Fertig" />
     </main>
   );

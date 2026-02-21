@@ -1,4 +1,4 @@
-import multipleChoiceConfig from "../data/configs/multipleChoice/FakeShopMC.json";
+import multipleChoiceConfig from "../data/configs/multipleChoice/VerhaltenMC.json";
 import MultipleChoiceQuiz from "../components/multiple-choice/MultipleChoiceQuiz.jsx";
 import FinishButton from "../components/finish-btn/FinishButton.jsx";
 import { useEffect } from "react";
