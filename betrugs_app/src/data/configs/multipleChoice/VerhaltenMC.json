@@ -4,68 +4,80 @@
   "subtitleName": "subtitle_verhalten",
   "questions": [
     {
-      "question": "Du hast Geld an einen Fake-Shop gezahlt. Was ist der wichtigste erste Schritt?",
+      "question": "Was ist die erste wichtige Maßnahme bei Verdacht auf Internetbetrug?",
       "options": [
         {
-          "value": "Sofort Bank oder Zahlungsdienst kontaktieren und eine Stornierung pruefen.",
-          "explanation": "Richtig. Je schneller du reagierst, desto hoeher ist die Chance, den Schaden zu begrenzen."
+          "value": "Den mutmaßlichen Betrüger zur Rede stellen und weitere Informationen einholen."
         },
         {
-          "value": "Ein paar Tage abwarten, ob die Ware vielleicht doch kommt."
+          "value": "Den Kontakt sofort abbrechen und keine weiteren Informationen preisgeben.",
+          "explanation": "Der Kontakt soll sofort abgebrochen und keine weiteren Daten weitergegeben werden."
         },
         {
-          "value": "Nur einen Kommentar in sozialen Medien schreiben."
+          "value": "Die E-Mail an Freunde weiterleiten, um deren Meinung einzuholen."
         }
       ],
-      "correctValue": "Sofort Bank oder Zahlungsdienst kontaktieren und eine Stornierung pruefen."
+      "correctValue": "Den Kontakt sofort abbrechen und keine weiteren Informationen preisgeben."
     },
     {
-      "question": "Warum solltest du Beweise wie E-Mails, Screenshots und Rechnungen sichern?",
+      "question": "Welche Schritte sind erforderlich, wenn Zugangsdaten weitergegeben wurden?",
       "options": [
         {
-          "value": "Sie helfen bei Anzeige, Rueckbuchung und weiterer Aufklaerung.",
-          "explanation": "Richtig. Dokumentation ist wichtig fuer Polizei, Bank und weitere Stellen."
+          "value": "Passwörter unverzüglich ändern.",
+          "explanation": "Passwörter müssen sofort geändert werden."
         },
         {
-          "value": "Das ist unnoetig, sobald der Vorfall vorbei ist."
+          "value": "Die IT-Abteilung oder Vorgesetzte informieren.",
+          "explanation": "Zuständige Stellen sollen umgehend informiert werden."
         },
         {
-          "value": "Nur bei sehr hohen Summen lohnt sich das."
+          "value": "Abwarten, ob ein Schaden entsteht."
         }
       ],
-      "correctValue": "Sie helfen bei Anzeige, Rueckbuchung und weiterer Aufklaerung."
+      "correctValues": [
+        "Passwörter unverzüglich ändern.",
+        "Die IT-Abteilung oder Vorgesetzte informieren."
+      ]
     },
     {
-      "question": "Wo solltest du einen Betrugsfall zusaetzlich melden?",
+      "question": "Welche Stellen können bei einem Internetbetrug informiert werden?",
       "options": [
         {
-          "value": "Bei Polizei und je nach Fall bei Verbraucherzentrale oder Plattform.",
-          "explanation": "Richtig. Das unterstuetzt sowohl dich als auch die Praevention fuer andere."
+          "value": "Das Bundeskriminalamt (z. B. über das Zentrum zur Meldung von Internetkriminalität - ZMI).",
+          "explanation": "Das BKA beziehungsweise ZMI ist eine offizielle Meldestelle."
         },
         {
-          "value": "Nirgendwo, wenn du den Schaden schon akzeptiert hast."
+          "value": "Die örtliche Polizei.",
+          "explanation": "Auch die örtliche Polizei ist eine offizielle Anlaufstelle."
         },
         {
-          "value": "Nur im Freundeskreis, nicht bei offiziellen Stellen."
+          "value": "Ausschließlich den eigenen Freundeskreis."
         }
       ],
-      "correctValue": "Bei Polizei und je nach Fall bei Verbraucherzentrale oder Plattform."
+      "correctValues": [
+        "Das Bundeskriminalamt (z. B. über das Zentrum zur Meldung von Internetkriminalität - ZMI).",
+        "Die örtliche Polizei."
+      ]
     },
     {
-      "question": "Was ist nach einem moeglichen Datenabfluss besonders wichtig?",
+      "question": "Welche Maßnahmen gehören zur Beweissicherung?",
       "options": [
         {
-          "value": "Passwoerter sofort aendern und wo moeglich Zwei-Faktor-Authentifizierung aktivieren.",
-          "explanation": "Richtig. Das reduziert das Risiko weiterer Konto-Uebernahmen deutlich."
+          "value": "Relevante E-Mails, Screenshots und Zahlungsbelege speichern.",
+          "explanation": "Beweissicherung umfasst das Speichern relevanter Daten."
         },
         {
-          "value": "Dasselbe Passwort weiterverwenden, um den Ueberblick zu behalten."
+          "value": "Nachrichten sofort löschen, um das Problem zu vergessen."
         },
         {
-          "value": "Warnmails ignorieren, damit keine Panik entsteht."
+          "value": "Den zeitlichen Ablauf und weitergegebene Daten dokumentieren.",
+          "explanation": "Der Ablauf und weitergegebene Daten sollten dokumentiert werden."
         }
       ],
-      "correctValue": "Passwoerter sofort aendern und wo moeglich Zwei-Faktor-Authentifizierung aktivieren."
+      "correctValues": [
+        "Relevante E-Mails, Screenshots und Zahlungsbelege speichern.",
+        "Den zeitlichen Ablauf und weitergegebene Daten dokumentieren."
+      ]
     }
   ]
 }
