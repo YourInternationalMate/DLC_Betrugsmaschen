@@ -11,6 +11,7 @@ function RadioButton2({
   onChange,
   selectedValue,
   feedbackStatus,
+  showSubmitButton = true,
 }) {
   const getOptionStyles = (optionValue) => {
     if (!feedbackStatus || feedbackStatus === "warning") {
@@ -61,9 +62,11 @@ function RadioButton2({
               sx={getOptionStyles(value2)}
             />
           </RadioGroup>
-          <button type="submit" className="submit-btn">
-            ✓
-          </button>
+          {showSubmitButton && (
+            <button type="submit" className="submit-btn">
+              ✓
+            </button>
+          )}
         </FormControl>
       </form>
     </div>

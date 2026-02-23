@@ -1,12 +1,71 @@
 {
   "variant": 3,
-  "question": "Frage aller Fragen",
   "videoName": "verhalten.mov",
   "subtitleName": "subtitle_verhalten",
-  "options": [
-    { "value": "Test1", "explanation": "Test1 ist falsch" },
-    { "value": "Test2", "explanation": "1" },
-    { "value": "Test3", "explanation": "Test3 ist falsch" }
-  ],
-  "correctValue": "Test3"
+  "questions": [
+    {
+      "question": "Du hast Geld an einen Fake-Shop gezahlt. Was ist der wichtigste erste Schritt?",
+      "options": [
+        {
+          "value": "Sofort Bank oder Zahlungsdienst kontaktieren und eine Stornierung pruefen.",
+          "explanation": "Richtig. Je schneller du reagierst, desto hoeher ist die Chance, den Schaden zu begrenzen."
+        },
+        {
+          "value": "Ein paar Tage abwarten, ob die Ware vielleicht doch kommt."
+        },
+        {
+          "value": "Nur einen Kommentar in sozialen Medien schreiben."
+        }
+      ],
+      "correctValue": "Sofort Bank oder Zahlungsdienst kontaktieren und eine Stornierung pruefen."
+    },
+    {
+      "question": "Warum solltest du Beweise wie E-Mails, Screenshots und Rechnungen sichern?",
+      "options": [
+        {
+          "value": "Sie helfen bei Anzeige, Rueckbuchung und weiterer Aufklaerung.",
+          "explanation": "Richtig. Dokumentation ist wichtig fuer Polizei, Bank und weitere Stellen."
+        },
+        {
+          "value": "Das ist unnoetig, sobald der Vorfall vorbei ist."
+        },
+        {
+          "value": "Nur bei sehr hohen Summen lohnt sich das."
+        }
+      ],
+      "correctValue": "Sie helfen bei Anzeige, Rueckbuchung und weiterer Aufklaerung."
+    },
+    {
+      "question": "Wo solltest du einen Betrugsfall zusaetzlich melden?",
+      "options": [
+        {
+          "value": "Bei Polizei und je nach Fall bei Verbraucherzentrale oder Plattform.",
+          "explanation": "Richtig. Das unterstuetzt sowohl dich als auch die Praevention fuer andere."
+        },
+        {
+          "value": "Nirgendwo, wenn du den Schaden schon akzeptiert hast."
+        },
+        {
+          "value": "Nur im Freundeskreis, nicht bei offiziellen Stellen."
+        }
+      ],
+      "correctValue": "Bei Polizei und je nach Fall bei Verbraucherzentrale oder Plattform."
+    },
+    {
+      "question": "Was ist nach einem moeglichen Datenabfluss besonders wichtig?",
+      "options": [
+        {
+          "value": "Passwoerter sofort aendern und wo moeglich Zwei-Faktor-Authentifizierung aktivieren.",
+          "explanation": "Richtig. Das reduziert das Risiko weiterer Konto-Uebernahmen deutlich."
+        },
+        {
+          "value": "Dasselbe Passwort weiterverwenden, um den Ueberblick zu behalten."
+        },
+        {
+          "value": "Warnmails ignorieren, damit keine Panik entsteht."
+        }
+      ],
+      "correctValue": "Passwoerter sofort aendern und wo moeglich Zwei-Faktor-Authentifizierung aktivieren."
+    }
+  ]
 }

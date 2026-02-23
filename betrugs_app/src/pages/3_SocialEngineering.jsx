@@ -1,6 +1,5 @@
-import VideoQuiz from "../components/video-quiz/VideoQuiz.jsx";
-import videoQuizConfig1 from "../data/configs/videoQuiz/VideoQuizConfig1.json";
-import VideoPlayer from "../components/video/Video.jsx";
+import multipleChoiceConfig from "../data/configs/multipleChoice/SocialEngineeringMC.json";
+import MultipleChoiceQuiz from "../components/multiple-choice/MultipleChoiceQuiz.jsx";
 import FinishButton from "../components/finish-btn/FinishButton.jsx";
 import { useEffect } from "react";
 
@@ -12,8 +11,7 @@ function SocialEngineering({ onFinish }) {
   return (
     <main>
       <h1>SOCIAL ENGINEERING</h1>
-      <VideoPlayer video_name={"social_engineering.mov"} subtitle_name={"subtitle_social_engineering"}/>
-      <VideoQuiz config={videoQuizConfig1} />
+      <MultipleChoiceQuiz config={multipleChoiceConfig} />
       <FinishButton onFinish={onFinish} />
     </main>
   );
