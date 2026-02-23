@@ -1,0 +1,75 @@
+{
+  "variant": 3,
+  "videoName": "social_engineering.mov",
+  "subtitleName": "subtitle_social_engineering",
+  "questions": [
+    {
+      "question": "Was ist Social Engineering?",
+      "options": [
+        {
+          "value": "Ein technischer Hack auf Firewalls."
+        },
+        {
+          "value": "Psychologische Manipulation menschlicher Schwächen wie Angst oder Autorität.",
+          "explanation": "Es nutzt Emotionen (Angst, Neugier, Hilfsbereitschaft), nicht Technik; über 70% der Cyberangriffe beginnen so."
+        },
+        {
+          "value": "Nur E-Mail-Betrug."
+        }
+      ],
+      "correctValue": "Psychologische Manipulation menschlicher Schwächen wie Angst oder Autorität."
+    },
+    {
+      "question": "Welche Tricks werden hauptsächlich eingesetzt? (Wähle 2)",
+      "options": [
+        {
+          "value": "Zeitdruck und Autorität (z.B. angeblicher Chef).",
+          "explanation": "Betrüger erzeugen Dringlichkeit (\"sofort handeln\") und nutzen Autorität, um unüberlegte Handlungen zu provozieren."
+        },
+        {
+          "value": "Neugier und Hilfsbereitschaft.",
+          "explanation": "Betrüger nutzen auch Neugier und Hilfsbereitschaft, um schnelle und unkritische Reaktionen auszulösen."
+        },
+        {
+          "value": "Automatische Software-Updates."
+        }
+      ],
+      "correctValues": [
+        "Zeitdruck und Autorität (z.B. angeblicher Chef).",
+        "Neugier und Hilfsbereitschaft."
+      ]
+    },
+    {
+      "question": "Was ist CEO-Fraud?",
+      "options": [
+        {
+          "value": "Betrug per SMS."
+        },
+        {
+          "value": "Gefälschte Anweisung vom \"Chef\" für Geldüberweisungen, oft mit Vorbereitung via LinkedIn.",
+          "explanation": "Täter recherchieren Firmendetails; zunehmend mit Deepfakes; Milliardenverluste weltweit (z.B. 43 Mrd. USD 2016-2021)."
+        },
+        {
+          "value": "Kostenlose Software-Downloads."
+        }
+      ],
+      "correctValue": "Gefälschte Anweisung vom \"Chef\" für Geldüberweisungen, oft mit Vorbereitung via LinkedIn."
+    },
+    {
+      "question": "Wie schützt man sich vor Telefonbetrug (Vishing)?",
+      "options": [
+        {
+          "value": "Sensible Daten immer preisgeben."
+        },
+        {
+          "value": "Auflegen, offizielle Nummer zurückrufen und Dringlichkeit misstrauen.",
+          "explanation": "Spoofing fälscht Nummern (z.B. Polizei); seriöse Stellen fragen nie nach PIN/TAN; Beispiele: Enkeltrick, falsche Polizisten."
+        },
+        {
+          "value": "Bei verdächtigen Nummern ans Telefon gehen."
+        }
+      ],
+      "correctValue": "Auflegen, offizielle Nummer zurückrufen und Dringlichkeit misstrauen."
+    }
+  ]
+}

@@ -12,6 +12,14 @@
     color: var(--txt-color); 
 }
 
+.MuiCheckbox-root .MuiSvgIcon-root {
+    color: var(--txt-color);
+}
+
+.MuiCheckbox-root.Mui-checked .MuiSvgIcon-root {
+    color: var(--txt-color);
+}
+
 
 .form-container {
     display: flex;

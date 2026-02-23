@@ -8,7 +8,7 @@
 }
 
 .quiz-feedback {
-  margin-left: 10%;
+  margin-left: 7% !important;
 }
 
 .quiz-feedback.correct {
@@ -28,8 +28,25 @@
   margin: 0 auto 20px;
 }
 
+.quiz-progress {
+  width: 90%;
+  margin: 0 auto 8px;
+}
+
+.quiz-next-btn {
+  margin-left: 5%;
+}
+
 @media (max-width: 620px) {
   .quiz-question {
     width: 100%;
+  }
+
+  .quiz-progress {
+    width: 100%;
+  }
+
+  .quiz-next-btn {
+    margin-left: 0;
   }
 }
