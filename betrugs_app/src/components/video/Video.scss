@@ -1,4 +1,5 @@
 .video-container {
+  position: relative;
   width: 80%;
   aspect-ratio: 16 / 9;
   margin: auto;
@@ -14,7 +15,14 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border: var(--txt-color) solid 1px;
+    border: var(--txt-color) solid 1.5px;
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .video-controls {

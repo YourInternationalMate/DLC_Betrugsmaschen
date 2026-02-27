@@ -140,9 +140,9 @@ function MultipleChoiceQuiz({ config }) {
       message: isCorrect
         ? correctExplanationText ||
           (isMultiAnswerQuestion ? "Richtige Antworten!" : "Richtige Antwort!")
-        : isMultiAnswerQuestion
-        ? "Leider nicht vollständig richtig. Versuche es nochmal."
-        : "Leider falsch. Versuche es nochmal.",
+          : isMultiAnswerQuestion
+              ? "Leider nicht vollständig richtig. Versuche es nochmal."
+              : "Leider falsch. Versuche es nochmal.",
     });
   };
 
@@ -194,31 +194,26 @@ function MultipleChoiceQuiz({ config }) {
 
   if (isMultiAnswerQuestion) {
     content = (
-      <form onSubmit={handleSubmit}>
-        <FormControl className="form-container">
-          <FormGroup className="radio-btn">
-            {values.map((value) => (
-              <FormControlLabel
-                key={value}
-                control={
-                  <Checkbox
-                    value={value}
-                    onChange={handleMultiChange}
-                    checked={selectedValues.includes(value)}
+        <form onSubmit={handleSubmit}>
+          <FormControl className="form-container" sx={{ marginLeft: "5%" }}>
+            <FormGroup className="radio-btn">
+              {values.map((value) => (
+                  <FormControlLabel
+                      key={value}
+                      control={
+                        <Checkbox
+                            value={value}
+                            onChange={handleMultiChange}
+                            checked={selectedValues.includes(value)}
+                        />
+                      }
+                      label={value}
+                      sx={getOptionStyles(value)}
                   />
-                }
-                label={value}
-                sx={getOptionStyles(value)}
-              />
-            ))}
-          </FormGroup>
-          {!showContinueButton && (
-            <button type="submit" className="submit-btn">
-              ✓
-            </button>
-          )}
-        </FormControl>
-      </form>
+              ))}
+            </FormGroup>
+          </FormControl>
+        </form>
     );
   } else {
     switch (computedVariant) {
@@ -254,36 +249,41 @@ function MultipleChoiceQuiz({ config }) {
   }
 
   return (
-    <>
-      {videoName && (
-        <VideoPlayer video_name={videoName} subtitle_name={subtitleName} />
-      )}
-      
-      <Instruction quizType="multipleChoiceQuiz" />
-      
-      <div className="radio-btn-container">
-        {questionItems.length > 1 && (
-          <p className="quiz-progress">
-            Frage {currentQuestionIndex + 1} von {questionItems.length}
-          </p>
+      <>
+        {videoName && (
+            <VideoPlayer video_name={videoName} subtitle_name={subtitleName} />
         )}
-        <h3 className="quiz-question">{question}</h3>
+
+        <Instruction quizType="multipleChoiceQuiz" />
+
+        <div className="radio-btn-container">
+          {questionItems.length > 1 && (
+              <p className="quiz-progress">
+                Frage {currentQuestionIndex + 1} von {questionItems.length}
+              </p>
+          )}
+          <h3 className="quiz-question">{question}</h3>
           {content}
           {feedback && feedback.status !== "warning" && (
-            <p className={`quiz-feedback ${feedback.status}`}>
-              {feedback.message}
-            </p>
+              <p className={`quiz-feedback ${feedback.status}`}>
+                {feedback.message}
+              </p>
           )}
           {feedback?.status === "warning" && (
-            <p className="quiz-feedback warning">{feedback.message}</p>
+              <p className="quiz-feedback warning">{feedback.message}</p>
+          )}
+          {isMultiAnswerQuestion && !showContinueButton && (
+              <button type="submit" className="submit-btn" onClick={handleSubmit}>
+                ✓
+              </button>
           )}
           {showContinueButton && (
-            <button className="submit-btn quiz-next-btn" onClick={handleNextQuestion}>
-              Weiter
-            </button>
+              <button className="submit-btn quiz-next-btn" onClick={handleNextQuestion}>
+                Weiter
+              </button>
           )}
-      </div>
-    </>
+        </div>
+      </>
   );
 }
 

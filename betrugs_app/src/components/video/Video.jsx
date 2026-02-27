@@ -73,6 +73,12 @@ const VideoPlayer = ({ widthClass = "w-large", video_name, subtitle_name, onEnde
                 Ihr Browser unterstützt das Video-Tag nicht.
             </video>
 
+            {!isPlaying && progress === 0 && (
+                <div className="play-overlay" onClick={handlePlayPause}>
+                    <FaPlay size={"40px"} />
+                </div>
+            )}
+
             <div className="video-controls">
                 <button className="btn-play" onClick={handlePlayPause}>
                     {isPlaying ? <FaPause size={"20px"} /> : <FaPlay size={"20px"} />}
