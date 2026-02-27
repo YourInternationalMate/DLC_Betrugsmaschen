@@ -273,12 +273,12 @@ function MultipleChoiceQuiz({ config }) {
               <p className="quiz-feedback warning">{feedback.message}</p>
           )}
           {isMultiAnswerQuestion && !showContinueButton && (
-              <button type="submit" className="submit-btn" onClick={handleSubmit}>
+              <button type="submit" className="submit-btn submit-mc-btn" onClick={handleSubmit}>
                 ✓
               </button>
           )}
           {showContinueButton && (
-              <button className="submit-btn quiz-next-btn" onClick={handleNextQuestion}>
+              <button className="quiz-next-btn" onClick={handleNextQuestion}>
                 Weiter
               </button>
           )}

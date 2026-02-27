@@ -33,7 +33,19 @@
   margin: 0 auto 8px;
 }
 
-.quiz-next-btn {
+.quiz-next-btn{
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  width: 100px;
+  height: 41px;
+  border-radius: 20.5px;
+  border: 0;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  margin-left: 5%;
+}
+
+.submit-mc-btn {
   margin-left: 5%;
 }
 
