@@ -15,7 +15,7 @@ function Phishing({ onFinish }) {
         PHISHING
       </h1>
       <VideoPlayer video_name={"phishing.mov"} subtitle_name={"subtitle_phishing"}/>
-      <h3>Finde Sie alle Fehler!</h3>
+      <h3>Finden Sie alle Fehler!</h3>
       <HotspotQuiz config={hotspotQuizConfig1} />
       <FinishButton onFinish={onFinish} />
     </main>
